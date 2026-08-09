@@ -1,666 +1,4347 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mughal Mobile Store</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Mughal Mobile Store - Mobile covers, handsfree, chargers, cables and screen protectors.">
+          content="Mughal Mobile Store - Quality mobile accessories including mobile covers, handsfree, chargers, cables and screen protectors.">
+
+    <meta name="keywords"
+          content="Mughal Mobile Store, mobile accessories, mobile covers, handsfree, chargers, cables, screen protectors Pakistan">
+
+    <meta name="author"
+          content="Mughal Mobile Store">
+
+    <title>Mughal Mobile Store | Mobile Accessories</title>
+
 
     <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            color: #222;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f5f6f8;
+
+            color: #1a1a1a;
+
+            line-height: 1.6;
         }
 
-        /* HEADER */
-        header {
-            background: #111;
-            color: white;
-            padding: 18px 7%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        button,
+        input,
+        select,
+        textarea {
+            font-family: inherit;
         }
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-        }
-
-        .logo span {
-            color: #f5c400;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-        }
-
-        nav a:hover {
-            color: #f5c400;
-        }
-
-        /* HERO */
-        .hero {
-            background: linear-gradient(135deg, #111, #292929);
-            color: white;
-            text-align: center;
-            padding: 90px 20px;
-        }
-
-        .hero h1 {
-            font-size: 50px;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 span {
-            color: #f5c400;
-        }
-
-        .hero p {
-            font-size: 19px;
-            color: #ddd;
-            margin-bottom: 30px;
-        }
-
-        .button {
-            display: inline-block;
-            background: #f5c400;
-            color: #111;
-            padding: 14px 28px;
-            border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
-            border: none;
+        button {
             cursor: pointer;
         }
 
-        .button:hover {
-            background: white;
+        a {
+            text-decoration: none;
         }
 
-        /* SECTION */
-        .section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 70px 20px;
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+
+            --black: #111111;
+
+            --dark: #191919;
+
+            --yellow: #ffc400;
+
+            --yellow-dark: #e0a900;
+
+            --white: #ffffff;
+
+            --gray: #6b7280;
+
+            --light: #f5f6f8;
+
+            --border: #e5e7eb;
+
+            --green: #25d366;
+
+            --red: #dc2626;
+
+            --shadow:
+                0 8px 30px rgba(0, 0, 0, 0.08);
+
+            --radius: 14px;
         }
 
-        .section-title {
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        .top-bar {
+
+            background: var(--yellow);
+
+            color: #111;
+
             text-align: center;
-            font-size: 34px;
-            margin-bottom: 40px;
+
+            padding: 8px 15px;
+
+            font-size: 14px;
+
+            font-weight: 600;
         }
 
-        /* PRODUCTS */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+        header {
+
+            background: var(--black);
+
+            color: white;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 3px 15px rgba(0,0,0,.15);
+        }
+
+
+        .navbar {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            min-height: 75px;
+
+            padding: 0 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
             gap: 25px;
         }
 
-        .product {
-            background: white;
-            padding: 30px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
 
-        .product:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.14);
-        }
+        .logo {
 
-        .product-icon {
-            font-size: 60px;
-            margin-bottom: 18px;
-        }
-
-        .product h3 {
-            font-size: 23px;
-            margin-bottom: 12px;
-        }
-
-        .product p {
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-
-        .price {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .cart-button {
-            background: #111;
             color: white;
-            padding: 12px 22px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
+
+            font-size: 25px;
+
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+
+        .logo span {
+
+            color: var(--yellow);
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+        }
+
+
+        .nav-links a {
+
+            color: white;
+
             font-size: 15px;
+
+            font-weight: 600;
+
+            transition: .2s;
         }
 
-        .cart-button:hover {
-            background: #f5c400;
+
+        .nav-links a:hover {
+
+            color: var(--yellow);
+        }
+
+
+        .cart-btn {
+
+            border: none;
+
+            background: var(--yellow);
+
             color: #111;
+
+            padding: 11px 17px;
+
+            border-radius: 25px;
+
+            font-weight: 700;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
         }
 
-        /* FEATURES */
-        .features {
+
+        .cart-count {
+
             background: #111;
+
             color: white;
+
+            width: 22px;
+
+            height: 22px;
+
+            border-radius: 50%;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 12px;
         }
 
-        .feature-grid {
-            max-width: 1200px;
+
+        .menu-btn {
+
+            display: none;
+
+            background: transparent;
+
+            border: none;
+
+            color: white;
+
+            font-size: 28px;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+
+            min-height: 570px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #0b0b0b,
+                    #1e1e1e 55%,
+                    #292929
+                );
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+
+            height: 450px;
+
+            background: var(--yellow);
+
+            border-radius: 50%;
+
+            right: -180px;
+
+            top: -180px;
+
+            opacity: .08;
+        }
+
+
+        .hero-container {
+
+            max-width: 1250px;
+
+            width: 100%;
+
             margin: auto;
-            padding: 60px 20px;
+
+            padding: 80px 20px;
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            text-align: center;
+
+            grid-template-columns: 1.1fr .9fr;
+
+            gap: 50px;
+
+            align-items: center;
         }
 
-        .feature {
-            padding: 20px;
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
         }
 
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
+
+        .hero-badge {
+
+            display: inline-block;
+
+            background: rgba(255,196,0,.12);
+
+            color: var(--yellow);
+
+            border: 1px solid rgba(255,196,0,.35);
+
+            padding: 8px 15px;
+
+            border-radius: 25px;
+
+            margin-bottom: 20px;
+
+            font-size: 14px;
+
+            font-weight: 700;
         }
 
-        .feature h3 {
-            margin-bottom: 10px;
-        }
 
-        .feature p {
-            color: #bbb;
-        }
+        .hero h1 {
 
-        /* ABOUT */
-        .about {
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-            padding: 70px 20px;
-        }
+            font-size: clamp(40px, 6vw, 68px);
 
-        .about h2 {
-            font-size: 34px;
+            line-height: 1.08;
+
             margin-bottom: 20px;
         }
 
-        .about p {
-            color: #555;
-            line-height: 1.8;
-            font-size: 17px;
+
+        .hero h1 span {
+
+            color: var(--yellow);
         }
 
-        /* CONTACT */
-        .contact {
+
+        .hero p {
+
+            max-width: 650px;
+
+            color: #d1d5db;
+
+            font-size: 18px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .hero-buttons {
+
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .primary-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: var(--yellow);
+
+            color: #111;
+
+            padding: 14px 25px;
+
+            border-radius: 8px;
+
+            border: none;
+
+            font-weight: 800;
+
+            transition: .2s;
+        }
+
+
+        .primary-btn:hover {
+
             background: white;
-            text-align: center;
-            padding: 70px 20px;
+
+            transform: translateY(-2px);
         }
 
-        .contact h2 {
-            font-size: 34px;
-            margin-bottom: 15px;
+
+        .secondary-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: transparent;
+
+            color: white;
+
+            padding: 13px 25px;
+
+            border: 1px solid #666;
+
+            border-radius: 8px;
+
+            font-weight: 700;
         }
 
-        .contact p {
-            color: #666;
-            margin-bottom: 25px;
+
+        .secondary-btn:hover {
+
+            border-color: var(--yellow);
+
+            color: var(--yellow);
         }
 
-        .whatsapp {
-            background: #25d366;
+
+        .hero-visual {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        .phone-card {
+
+            width: 300px;
+
+            height: 390px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #252525,
+                    #111
+                );
+
+            border: 1px solid #3b3b3b;
+
+            border-radius: 35px;
+
+            box-shadow:
+                0 30px 60px rgba(0,0,0,.4);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            transform: rotate(4deg);
+        }
+
+
+        .phone-card::before {
+
+            content: "";
+
+            width: 80px;
+
+            height: 18px;
+
+            background: #000;
+
+            border-radius: 20px;
+
+            position: absolute;
+
+            top: 15px;
+        }
+
+
+        .phone-icon {
+
+            font-size: 110px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .phone-card h3 {
+
+            font-size: 25px;
+
             color: white;
         }
 
-        .whatsapp:hover {
-            background: #128c7e;
-            color: white;
-        }
 
-        /* FOOTER */
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-        }
+        .phone-card span {
 
-        footer h3 {
-            margin-bottom: 10px;
-        }
+            color: var(--yellow);
 
-        footer p {
-            color: #aaa;
+            font-weight: 700;
+
             margin-top: 8px;
         }
 
-        /* CART MESSAGE */
-        #message {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
+
+        /* =========================================================
+           TRUST BAR
+        ========================================================= */
+
+        .trust-bar {
+
+            background: white;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .trust-container {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 22px 20px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .trust-item {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            color: #333;
+        }
+
+
+        .trust-icon {
+
+            font-size: 25px;
+        }
+
+
+        .trust-item strong {
+
+            display: block;
+
+            font-size: 14px;
+        }
+
+
+        .trust-item small {
+
+            color: var(--gray);
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           GENERAL SECTION
+        ========================================================= */
+
+        .section {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 80px 20px;
+        }
+
+
+        .section-heading {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+
+        .section-heading span {
+
+            color: var(--yellow-dark);
+
+            font-weight: 800;
+
+            font-size: 14px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+
+        .section-heading h2 {
+
+            font-size: 38px;
+
+            margin: 7px 0 10px;
+        }
+
+
+        .section-heading p {
+
+            color: var(--gray);
+
+            max-width: 650px;
+
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           SEARCH
+        ========================================================= */
+
+        .shop-tools {
+
+            display: flex;
+
+            gap: 15px;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 30px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .search-box {
+
+            flex: 1;
+
+            min-width: 250px;
+
+            position: relative;
+        }
+
+
+        .search-box input {
+
+            width: 100%;
+
+            padding: 14px 18px 14px 45px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 9px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            background: white;
+        }
+
+
+        .search-box input:focus {
+
+            border-color: var(--yellow-dark);
+        }
+
+
+        .search-icon {
+
+            position: absolute;
+
+            left: 17px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #777;
+        }
+
+
+        .categories {
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .category-btn {
+
+            padding: 10px 16px;
+
+            border: 1px solid var(--border);
+
+            background: white;
+
+            border-radius: 25px;
+
+            color: #444;
+
+            font-weight: 600;
+        }
+
+
+        .category-btn:hover,
+        .category-btn.active {
+
             background: #111;
+
             color: white;
-            padding: 15px 22px;
+
+            border-color: #111;
+        }
+
+
+        /* =========================================================
+           PRODUCTS
+        ========================================================= */
+
+        .products-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .product-card {
+
+            background: white;
+
+            border-radius: var(--radius);
+
+            overflow: hidden;
+
+            border: 1px solid #eee;
+
+            box-shadow: var(--shadow);
+
+            transition: .25s;
+
+            position: relative;
+        }
+
+
+        .product-card:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,.12);
+        }
+
+
+        .product-image {
+
+            height: 190px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f0f1f3,
+                    #ffffff
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 75px;
+
+            position: relative;
+        }
+
+
+        .product-tag {
+
+            position: absolute;
+
+            left: 12px;
+
+            top: 12px;
+
+            background: var(--yellow);
+
+            color: #111;
+
+            padding: 5px 9px;
+
+            border-radius: 5px;
+
+            font-size: 11px;
+
+            font-weight: 800;
+        }
+
+
+        .product-info {
+
+            padding: 20px;
+        }
+
+
+        .product-category {
+
+            color: var(--gray);
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            font-weight: 700;
+        }
+
+
+        .product-info h3 {
+
+            font-size: 18px;
+
+            margin: 5px 0 8px;
+        }
+
+
+        .product-info p {
+
+            color: var(--gray);
+
+            font-size: 13px;
+
+            min-height: 42px;
+        }
+
+
+        .product-bottom {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            margin-top: 15px;
+        }
+
+
+        .product-price {
+
+            font-size: 19px;
+
+            font-weight: 800;
+        }
+
+
+        .add-btn {
+
+            background: #111;
+
+            color: white;
+
+            border: none;
+
+            padding: 10px 13px;
+
             border-radius: 7px;
+
+            font-weight: 700;
+
+            font-size: 12px;
+        }
+
+
+        .add-btn:hover {
+
+            background: var(--yellow);
+
+            color: #111;
+        }
+
+
+        .no-products {
+
+            grid-column: 1 / -1;
+
+            text-align: center;
+
+            padding: 60px;
+
+            color: var(--gray);
+
             display: none;
-            z-index: 999;
         }
 
-        /* MOBILE */
-        @media (max-width: 800px) {
 
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+        /* =========================================================
+           PROMO
+        ========================================================= */
 
-            nav a {
-                margin: 0 8px;
-            }
+        .promo {
 
-            .hero h1 {
-                font-size: 38px;
-            }
+            background:
+                linear-gradient(
+                    100deg,
+                    #111,
+                    #272727
+                );
 
-            .products {
-                grid-template-columns: 1fr 1fr;
-            }
+            color: white;
 
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
+            border-radius: 18px;
+
+            padding: 45px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 30px;
         }
 
-        @media (max-width: 550px) {
 
-            .products {
-                grid-template-columns: 1fr;
+        .promo h2 {
+
+            font-size: 32px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .promo p {
+
+            color: #bbb;
+        }
+
+
+        /* =========================================================
+           FEATURES
+        ========================================================= */
+
+        .features-section {
+
+            background: #111;
+
+            color: white;
+        }
+
+
+        .feature-grid {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 75px 20px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .feature-card {
+
+            padding: 30px;
+
+            border: 1px solid #333;
+
+            border-radius: 12px;
+
+            text-align: center;
+        }
+
+
+        .feature-icon {
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .feature-card h3 {
+
+            margin-bottom: 8px;
+        }
+
+
+        .feature-card p {
+
+            color: #aaa;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-container {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+
+        .about-box {
+
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 35px;
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .about-box h2 {
+
+            font-size: 36px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .about-box p {
+
+            color: var(--gray);
+
+            margin-bottom: 15px;
+        }
+
+
+        .about-list {
+
+            list-style: none;
+
+            margin-top: 20px;
+        }
+
+
+        .about-list li {
+
+            margin: 12px 0;
+
+            font-weight: 600;
+        }
+
+
+        .about-visual {
+
+            min-height: 370px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #111,
+                    #292929
+                );
+
+            border-radius: 20px;
+
+            color: white;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+        }
+
+
+        .about-visual .big-icon {
+
+            font-size: 100px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .about-visual h3 {
+
+            font-size: 28px;
+        }
+
+
+        .about-visual p {
+
+            color: #bbb;
+
+            margin-top: 5px;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-section {
+
+            background: white;
+        }
+
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .contact-card {
+
+            text-align: center;
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+            padding: 30px;
+        }
+
+
+        .contact-card .icon {
+
+            font-size: 35px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .contact-card h3 {
+
+            margin-bottom: 7px;
+        }
+
+
+        .contact-card p {
+
+            color: var(--gray);
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            background: #0d0d0d;
+
+            color: white;
+        }
+
+
+        .footer-container {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 55px 20px 25px;
+
+            display: grid;
+
+            grid-template-columns:
+                1.4fr 1fr 1fr;
+
+            gap: 40px;
+        }
+
+
+        .footer-logo {
+
+            font-size: 25px;
+
+            font-weight: 800;
+
+            margin-bottom: 15px;
+        }
+
+
+        .footer-logo span {
+
+            color: var(--yellow);
+        }
+
+
+        .footer-column p {
+
+            color: #999;
+
+            font-size: 14px;
+        }
+
+
+        .footer-column h3 {
+
+            margin-bottom: 15px;
+        }
+
+
+        .footer-column a {
+
+            display: block;
+
+            color: #aaa;
+
+            margin: 8px 0;
+
+            font-size: 14px;
+        }
+
+
+        .footer-column a:hover {
+
+            color: var(--yellow);
+        }
+
+
+        .copyright {
+
+            border-top: 1px solid #292929;
+
+            padding: 20px;
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           CART DRAWER
+        ========================================================= */
+
+        .cart-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0,0,0,.55);
+
+            z-index: 2000;
+
+            display: none;
+        }
+
+
+        .cart-overlay.active {
+
+            display: block;
+        }
+
+
+        .cart-drawer {
+
+            position: fixed;
+
+            right: -450px;
+
+            top: 0;
+
+            width: 420px;
+
+            max-width: 100%;
+
+            height: 100vh;
+
+            background: white;
+
+            z-index: 2001;
+
+            transition: .3s;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .cart-drawer.active {
+
+            right: 0;
+        }
+
+
+        .cart-header {
+
+            padding: 20px;
+
+            border-bottom: 1px solid var(--border);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .cart-header h2 {
+
+            font-size: 22px;
+        }
+
+
+        .close-cart {
+
+            border: none;
+
+            background: #f1f1f1;
+
+            width: 35px;
+
+            height: 35px;
+
+            border-radius: 50%;
+
+            font-size: 20px;
+        }
+
+
+        .cart-items {
+
+            flex: 1;
+
+            overflow-y: auto;
+
+            padding: 15px;
+        }
+
+
+        .empty-cart {
+
+            text-align: center;
+
+            color: var(--gray);
+
+            padding: 60px 20px;
+        }
+
+
+        .cart-item {
+
+            display: grid;
+
+            grid-template-columns: 55px 1fr auto;
+
+            gap: 12px;
+
+            align-items: center;
+
+            padding: 13px 0;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .cart-item-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            border-radius: 8px;
+
+            background: #f2f3f4;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 28px;
+        }
+
+
+        .cart-item h4 {
+
+            font-size: 14px;
+
+            margin-bottom: 3px;
+        }
+
+
+        .cart-item-price {
+
+            font-size: 13px;
+
+            color: var(--gray);
+        }
+
+
+        .quantity {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            margin-top: 7px;
+        }
+
+
+        .quantity button {
+
+            width: 25px;
+
+            height: 25px;
+
+            border: 1px solid var(--border);
+
+            background: white;
+
+            border-radius: 4px;
+        }
+
+
+        .remove-item {
+
+            border: none;
+
+            background: none;
+
+            color: var(--red);
+
+            font-size: 12px;
+
+            margin-top: 5px;
+        }
+
+
+        .cart-footer {
+
+            border-top: 1px solid var(--border);
+
+            padding: 20px;
+        }
+
+
+        .cart-total {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            margin-bottom: 15px;
+        }
+
+
+        .checkout-btn {
+
+            width: 100%;
+
+            padding: 14px;
+
+            background: var(--yellow);
+
+            color: #111;
+
+            border: none;
+
+            border-radius: 8px;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================================
+           CHECKOUT MODAL
+        ========================================================= */
+
+        .modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0,0,0,.65);
+
+            z-index: 3000;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+        }
+
+
+        .modal.active {
+
+            display: flex;
+        }
+
+
+        .modal-box {
+
+            background: white;
+
+            width: 550px;
+
+            max-width: 100%;
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            position: relative;
+        }
+
+
+        .modal-close {
+
+            position: absolute;
+
+            right: 20px;
+
+            top: 18px;
+
+            border: none;
+
+            background: #f2f2f2;
+
+            width: 35px;
+
+            height: 35px;
+
+            border-radius: 50%;
+
+            font-size: 18px;
+        }
+
+
+        .modal-box h2 {
+
+            margin-bottom: 8px;
+        }
+
+
+        .modal-box > p {
+
+            color: var(--gray);
+
+            margin-bottom: 20px;
+
+            font-size: 14px;
+        }
+
+
+        .form-group {
+
+            margin-bottom: 15px;
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+            font-weight: 700;
+
+            font-size: 14px;
+        }
+
+
+        .form-group input,
+        .form-group textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 7px;
+
+            outline: none;
+
+            font-size: 14px;
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+
+            border-color: var(--yellow-dark);
+        }
+
+
+        .form-group textarea {
+
+            min-height: 90px;
+
+            resize: vertical;
+        }
+
+
+        .order-summary {
+
+            background: #f5f6f8;
+
+            padding: 15px;
+
+            border-radius: 8px;
+
+            margin: 15px 0;
+
+            font-size: 14px;
+        }
+
+
+        .whatsapp-order {
+
+            width: 100%;
+
+            background: var(--green);
+
+            color: white;
+
+            border: none;
+
+            padding: 14px;
+
+            border-radius: 8px;
+
+            font-weight: 800;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================================
+           TOAST
+        ========================================================= */
+
+        .toast {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            background: #111;
+
+            color: white;
+
+            padding: 14px 20px;
+
+            border-radius: 8px;
+
+            z-index: 5000;
+
+            transform:
+                translateY(100px);
+
+            opacity: 0;
+
+            transition: .3s;
+        }
+
+
+        .toast.show {
+
+            transform: translateY(0);
+
+            opacity: 1;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1050px) {
+
+            .products-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
             }
 
-            .hero h1 {
-                font-size: 32px;
+            .hero-container {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
             }
 
             .hero p {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+
+                justify-content: center;
+            }
+
+            .hero-visual {
+
+                display: none;
+            }
+        }
+
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+
+                display: none;
+
+                position: absolute;
+
+                top: 75px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: #111;
+
+                padding: 20px;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 15px;
+            }
+
+            .nav-links.show {
+
+                display: flex;
+            }
+
+            .menu-btn {
+
+                display: block;
+            }
+
+            .navbar {
+
+                min-height: 68px;
+            }
+
+            .trust-container {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .products-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .feature-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .about-container {
+
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .promo {
+
+                flex-direction: column;
+
+                text-align: center;
+
+                align-items: center;
+            }
+        }
+
+
+        @media (max-width: 550px) {
+
+            .top-bar {
+
+                font-size: 12px;
+            }
+
+            .logo {
+
+                font-size: 20px;
+            }
+
+            .hero {
+
+                min-height: 520px;
+            }
+
+            .hero h1 {
+
+                font-size: 38px;
+            }
+
+            .hero p {
+
                 font-size: 16px;
             }
 
-            nav a {
-                font-size: 13px;
-                margin: 0 4px;
+            .trust-container {
+
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+
+                padding: 55px 15px;
+            }
+
+            .section-heading h2 {
+
+                font-size: 29px;
+            }
+
+            .shop-tools {
+
+                align-items: stretch;
+            }
+
+            .categories {
+
+                overflow-x: auto;
+
+                flex-wrap: nowrap;
+
+                padding-bottom: 5px;
+            }
+
+            .category-btn {
+
+                white-space: nowrap;
+            }
+
+            .footer-container {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .promo {
+
+                padding: 30px 20px;
+            }
+
+            .promo h2 {
+
+                font-size: 25px;
+            }
+
+            .cart-drawer {
+
+                width: 100%;
             }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
 
-<header>
+    <!-- =========================================================
+         TOP BAR
+    ========================================================= -->
 
-    <div class="logo">
-        Mughal <span>Mobile Store</span>
-    </div>
+    <div class="top-bar">
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-    <h1>
-        Welcome to <span>Mughal Mobile Store</span>
-    </h1>
-
-    <p>
-        Quality Mobile Accessories at Affordable Prices
-    </p>
-
-    <a href="#products" class="button">
-        Shop Now
-    </a>
-
-</section>
-
-
-<!-- PRODUCTS -->
-
-<section class="section" id="products">
-
-    <h2 class="section-title">
-        Our Products
-    </h2>
-
-    <div class="products">
-
-        <!-- PRODUCT 1 -->
-
-        <div class="product">
-
-            <div class="product-icon">📱</div>
-
-            <h3>Mobile Cover</h3>
-
-            <p>
-                Stylish and durable mobile covers
-                for everyday protection.
-            </p>
-
-            <div class="price">
-                Rs. 799
-            </div>
-
-            <button class="cart-button"
-                    onclick="addToCart('Mobile Cover')">
-                Add to Cart
-            </button>
-
-        </div>
-
-
-        <!-- PRODUCT 2 -->
-
-        <div class="product">
-
-            <div class="product-icon">🎧</div>
-
-            <h3>Handsfree</h3>
-
-            <p>
-                Clear sound quality for music,
-                calls and entertainment.
-            </p>
-
-            <div class="price">
-                Rs. 1,299
-            </div>
-
-            <button class="cart-button"
-                    onclick="addToCart('Handsfree')">
-                Add to Cart
-            </button>
-
-        </div>
-
-
-        <!-- PRODUCT 3 -->
-
-        <div class="product">
-
-            <div class="product-icon">🛡️</div>
-
-            <h3>Screen Protector</h3>
-
-            <p>
-                Protect your mobile screen
-                from scratches and damage.
-            </p>
-
-            <div class="price">
-                Rs. 499
-            </div>
-
-            <button class="cart-button"
-                    onclick="addToCart('Screen Protector')">
-                Add to Cart
-            </button>
-
-        </div>
-
-
-        <!-- PRODUCT 4 -->
-
-        <div class="product">
-
-            <div class="product-icon">🔌</div>
-
-            <h3>Fast Charger</h3>
-
-            <p>
-                Fast and reliable charging
-                for your smartphone.
-            </p>
-
-            <div class="price">
-                Rs. 1,499
-            </div>
-
-            <button class="cart-button"
-                    onclick="addToCart('Fast Charger')">
-                Add to Cart
-            </button>
-
-        </div>
-
-
-        <!-- PRODUCT 5 -->
-
-        <div class="product">
-
-            <div class="product-icon">🔋</div>
-
-            <h3>USB Cable</h3>
-
-            <p>
-                Durable charging and data cable
-                for everyday use.
-            </p>
-
-            <div class="price">
-                Rs. 599
-            </div>
-
-            <button class="cart-button"
-                    onclick="addToCart('USB Cable')">
-                Add to Cart
-            </button>
-
-        </div>
-
-
-        <!-- PRODUCT 6 -->
-
-        <div class="product">
-
-            <div class="product-icon">📲</div>
-
-            <h3>Mobile Stand</h3>
-
-            <p>
-                Convenient stand for your
-                mobile at home or office.
-            </p>
-
-            <div class="price">
-                Rs. 699
-            </div>
-
-            <button class="cart-button"
-                    onclick="addToCart('Mobile Stand')">
-                Add to Cart
-            </button>
-
-        </div>
+        🚚 Fast Delivery Available Across Pakistan
 
     </div>
 
-</section>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+    <header>
+
+        <div class="navbar">
+
+            <a href="#home" class="logo">
+                Mughal <span>Mobile Store</span>
+            </a>
 
 
-<!-- FEATURES -->
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                onclick="toggleMenu()">
 
-<section class="features">
+                ☰
 
-    <div class="feature-grid">
+            </button>
 
-        <div class="feature">
 
-            <div class="feature-icon">🚚</div>
+            <nav
+                class="nav-links"
+                id="navLinks">
 
-            <h3>Fast Delivery</h3>
+                <a href="#home"
+                   onclick="closeMenu()">
+                    Home
+                </a>
+
+                <a href="#shop"
+                   onclick="closeMenu()">
+                    Shop
+                </a>
+
+                <a href="#about"
+                   onclick="closeMenu()">
+                    About
+                </a>
+
+                <a href="#contact"
+                   onclick="closeMenu()">
+                    Contact
+                </a>
+
+                <button
+                    class="cart-btn"
+                    onclick="openCart()">
+
+                    🛒 Cart
+
+                    <span
+                        class="cart-count"
+                        id="cartCount">
+                        0
+                    </span>
+
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <section
+        class="hero"
+        id="home">
+
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    QUALITY MOBILE ACCESSORIES
+                </span>
+
+
+                <h1>
+
+                    Everything Your
+                    <span>Mobile Needs</span>
+
+                </h1>
+
+
+                <p>
+
+                    Welcome to Mughal Mobile Store.
+                    Shop quality mobile covers, handsfree,
+                    chargers, cables, screen protectors
+                    and more at affordable prices.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#shop"
+                        class="primary-btn">
+
+                        Shop Now
+
+                    </a>
+
+
+                    <a
+                        href="#contact"
+                        class="secondary-btn">
+
+                        Contact Us
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="phone-card">
+
+                    <div class="phone-icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        Mughal Mobile
+                    </h3>
+
+                    <span>
+                        Store
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         TRUST BAR
+    ========================================================= -->
+
+    <section class="trust-bar">
+
+        <div class="trust-container">
+
+            <div class="trust-item">
+
+                <span class="trust-icon">
+                    🚚
+                </span>
+
+                <div>
+
+                    <strong>
+                        Fast Delivery
+                    </strong>
+
+                    <small>
+                        Across Pakistan
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <span class="trust-icon">
+                    ⭐
+                </span>
+
+                <div>
+
+                    <strong>
+                        Quality Products
+                    </strong>
+
+                    <small>
+                        Carefully Selected
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <span class="trust-icon">
+                    💰
+                </span>
+
+                <div>
+
+                    <strong>
+                        Affordable Prices
+                    </strong>
+
+                    <small>
+                        Best Value
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <span class="trust-icon">
+                    💬
+                </span>
+
+                <div>
+
+                    <strong>
+                        Customer Support
+                    </strong>
+
+                    <small>
+                        We're Here To Help
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SHOP
+    ========================================================= -->
+
+    <section
+        class="section"
+        id="shop">
+
+
+        <div class="section-heading">
+
+            <span>
+                Our Collection
+            </span>
+
+            <h2>
+                Shop Mobile Accessories
+            </h2>
 
             <p>
-                Delivery available across Pakistan.
+
+                Explore our collection of useful,
+                stylish and affordable mobile accessories.
+
             </p>
 
         </div>
 
 
-        <div class="feature">
+        <!-- SEARCH + CATEGORIES -->
 
-            <div class="feature-icon">⭐</div>
+        <div class="shop-tools">
 
-            <h3>Quality Products</h3>
+            <div class="search-box">
 
-            <p>
-                Quality accessories at reasonable prices.
-            </p>
+                <span class="search-icon">
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                    oninput="filterProducts()">
+
+            </div>
+
+
+            <div class="categories">
+
+                <button
+                    class="category-btn active"
+                    onclick="filterCategory('all', this)">
+
+                    All
+
+                </button>
+
+                <button
+                    class="category-btn"
+                    onclick="filterCategory('covers', this)">
+
+                    Covers
+
+                </button>
+
+                <button
+                    class="category-btn"
+                    onclick="filterCategory('audio', this)">
+
+                    Audio
+
+                </button>
+
+                <button
+                    class="category-btn"
+                    onclick="filterCategory('charging', this)">
+
+                    Charging
+
+                </button>
+
+                <button
+                    class="category-btn"
+                    onclick="filterCategory('protection', this)">
+
+                    Protection
+
+                </button>
+
+            </div>
 
         </div>
 
 
-        <div class="feature">
+        <!-- PRODUCTS -->
 
-            <div class="feature-icon">💬</div>
+        <div
+            class="products-grid"
+            id="productsGrid">
 
-            <h3>Customer Support</h3>
+
+            <!-- PRODUCT 1 -->
+
+            <div
+                class="product-card"
+                data-category="covers"
+                data-name="premium mobile cover">
+
+                <div class="product-image">
+
+                    <span class="product-tag">
+                        POPULAR
+                    </span>
+
+                    📱
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Mobile Covers
+                    </span>
+
+                    <h3>
+                        Premium Mobile Cover
+                    </h3>
+
+                    <p>
+                        Stylish protective cover for
+                        everyday mobile protection.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            Rs. 799
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Premium Mobile Cover',
+                                799,
+                                '📱'
+                            )">
+
+                            Add Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div
+                class="product-card"
+                data-category="covers"
+                data-name="silicone mobile cover">
+
+                <div class="product-image">
+
+                    🛡️
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Mobile Covers
+                    </span>
+
+                    <h3>
+                        Silicone Mobile Cover
+                    </h3>
+
+                    <p>
+                        Soft grip silicone cover with
+                        stylish modern finish.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            Rs. 699
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Silicone Mobile Cover',
+                                699,
+                                '🛡️'
+                            )">
+
+                            Add Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div
+                class="product-card"
+                data-category="audio"
+                data-name="premium handsfree">
+
+                <div class="product-image">
+
+                    <span class="product-tag">
+                        NEW
+                    </span>
+
+                    🎧
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Audio
+                    </span>
+
+                    <h3>
+                        Premium Handsfree
+                    </h3>
+
+                    <p>
+                        Clear audio quality for calls,
+                        music and entertainment.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            Rs. 1,299
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Premium Handsfree',
+                                1299,
+                                '🎧'
+                            )">
+
+                            Add Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div
+                class="product-card"
+                data-category="audio"
+                data-name="wireless earbuds">
+
+                <div class="product-image">
+
+                    🎶
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Audio
+                    </span>
+
+                    <h3>
+                        Wireless Earbuds
+                    </h3>
+
+                    <p>
+                        Compact wireless earbuds for
+                        everyday listening.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            Rs. 2,499
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Wireless Earbuds',
+                                2499,
+                                '🎶'
+                            )">
+
+                            Add Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+
+            <div
+                class="product-card"
+                data-category="charging"
+                data-name="fast charger">
+
+                <div class="product-image">
+
+                    <span class="product-tag">
+                        SALE
+                    </span>
+
+                    🔌
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Charging
+                    </span>
+
+                    <h3>
+                        Fast Charger
+                    </h3>
+
+                    <p>
+                        Reliable fast charging adapter
+                        for compatible smartphones.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            Rs. 1,499
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Fast Charger',
+                                1499,
+                                '🔌'
+                            )">
+
+                            Add Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+
+            <div
+                class="product-card"
+                data-category="charging"
+                data-name="usb charging cable">
+
+                <div class="product-image">
+
+                    🔋
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Charging
+                    </span>
+
+                    <h3>
+                        USB Charging Cable
+                    </h3>
+
+                    <p>
+                        Durable charging and data cable
+                        for daily use.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            Rs. 599
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'USB Charging Cable',
+                                599,
+                                '🔋'
+                            )">
+
+                            Add Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 7 -->
+
+            <div
+                class="product-card"
+                data-category="charging"
+                data-name="car charger">
+
+                <div class="product-image">
+
+                    🚗
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Charging
+                    </span>
+
+                    <h3>
+                        Car Charger
+                    </h3>
+
+                    <p>
+                        Convenient charger for your
+                        mobile while travelling.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            Rs. 999
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Car Charger',
+                                999,
+                                '🚗'
+                            )">
+
+                            Add Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 8 -->
+
+            <div
+                class="product-card"
+                data-category="protection"
+                data-name="tempered glass">
+
+                <div class="product-image">
+
+                    🛡️
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Protection
+                    </span>
+
+                    <h3>
+                        Tempered Glass
+                    </h3>
+
+                    <p>
+                        Screen protection against
+                        scratches and minor impacts.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            Rs. 499
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Tempered Glass',
+                                499,
+                                '🛡️'
+                            )">
+
+                            Add Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 9 -->
+
+            <div
+                class="product-card"
+                data-category="protection"
+                data-name="privacy screen protector">
+
+                <div class="product-image">
+
+                    🔒
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Protection
+                    </span>
+
+                    <h3>
+                        Privacy Screen Protector
+                    </h3>
+
+                    <p>
+                        Extra privacy and protection
+                        for your smartphone display.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            Rs. 799
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Privacy Screen Protector',
+                                799,
+                                '🔒'
+                            )">
+
+                            Add Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 10 -->
+
+            <div
+                class="product-card"
+                data-category="charging"
+                data-name="type c cable">
+
+                <div class="product-image">
+
+                    🔗
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Charging
+                    </span>
+
+                    <h3>
+                        Type-C Cable
+                    </h3>
+
+                    <p>
+                        Strong Type-C cable for
+                        charging and data transfer.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            Rs. 649
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Type-C Cable',
+                                649,
+                                '🔗'
+                            )">
+
+                            Add Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 11 -->
+
+            <div
+                class="product-card"
+                data-category="audio"
+                data-name="bluetooth speaker">
+
+                <div class="product-image">
+
+                    🔊
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Audio
+                    </span>
+
+                    <h3>
+                        Bluetooth Speaker
+                    </h3>
+
+                    <p>
+                        Portable speaker for music
+                        at home or outdoors.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            Rs. 2,999
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Bluetooth Speaker',
+                                2999,
+                                '🔊'
+                            )">
+
+                            Add Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 12 -->
+
+            <div
+                class="product-card"
+                data-category="covers"
+                data-name="mobile stand">
+
+                <div class="product-image">
+
+                    📲
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Accessories
+                    </span>
+
+                    <h3>
+                        Mobile Stand
+                    </h3>
+
+                    <p>
+                        Useful mobile stand for
+                        home, office and desk.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            Rs. 699
+                        </span>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Mobile Stand',
+                                699,
+                                '📲'
+                            )">
+
+                            Add Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="no-products"
+                id="noProducts">
+
+                <h3>
+                    No products found
+                </h3>
+
+                <p>
+                    Try another search or category.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         PROMO
+    ========================================================= -->
+
+    <section class="section">
+
+        <div class="promo">
+
+            <div>
+
+                <h2>
+                    Need a Mobile Accessory?
+                </h2>
+
+                <p>
+                    Find quality accessories at affordable prices.
+                </p>
+
+            </div>
+
+
+            <a
+                href="#shop"
+                class="primary-btn">
+
+                Explore Products
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FEATURES
+    ========================================================= -->
+
+    <section class="features-section">
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🚚
+                </div>
+
+                <h3>
+                    Fast Delivery
+                </h3>
+
+                <p>
+                    We aim to provide quick and
+                    reliable delivery across Pakistan.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⭐
+                </div>
+
+                <h3>
+                    Quality First
+                </h3>
+
+                <p>
+                    We focus on useful and reliable
+                    mobile accessories.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    💬
+                </div>
+
+                <h3>
+                    Easy Ordering
+                </h3>
+
+                <p>
+                    Add products to your cart and
+                    send your order through WhatsApp.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ABOUT
+    ========================================================= -->
+
+    <section
+        class="section"
+        id="about">
+
+        <div class="about-container">
+
+
+            <div class="about-box">
+
+                <span>
+                    ABOUT US
+                </span>
+
+                <h2>
+                    Mughal Mobile Store
+                </h2>
+
+                <p>
+
+                    Mughal Mobile Store is an online
+                    mobile accessories store focused on
+                    providing useful, stylish and affordable
+                    products.
+
+                </p>
+
+                <p>
+
+                    From mobile covers and screen protectors
+                    to chargers, cables and audio accessories,
+                    we aim to make everyday mobile accessories
+                    easy to find.
+
+                </p>
+
+
+                <ul class="about-list">
+
+                    <li>
+                        ✓ Quality Accessories
+                    </li>
+
+                    <li>
+                        ✓ Affordable Prices
+                    </li>
+
+                    <li>
+                        ✓ Easy WhatsApp Ordering
+                    </li>
+
+                    <li>
+                        ✓ Delivery Across Pakistan
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="about-visual">
+
+                <div class="big-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Mughal Mobile Store
+                </h3>
+
+                <p>
+                    Your Trusted Mobile Accessories Store
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CONTACT
+    ========================================================= -->
+
+    <section
+        class="contact-section"
+        id="contact">
+
+        <div class="section">
+
+            <div class="section-heading">
+
+                <span>
+                    Get In Touch
+                </span>
+
+                <h2>
+                    Contact Us
+                </h2>
+
+                <p>
+                    Have a question or want to place an order?
+                    Contact us directly.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <div class="contact-card">
+
+                    <div class="icon">
+                        💬
+                    </div>
+
+                    <h3>
+                        WhatsApp
+                    </h3>
+
+                    <p>
+                        Message us for orders
+                        and inquiries.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="icon">
+                        📦
+                    </div>
+
+                    <h3>
+                        Orders
+                    </h3>
+
+                    <p>
+                        Select your products and
+                        send your order.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="icon">
+                        🚚
+                    </div>
+
+                    <h3>
+                        Delivery
+                    </h3>
+
+                    <p>
+                        Delivery available across
+                        Pakistan.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <div class="footer-column">
+
+                <div class="footer-logo">
+
+                    Mughal
+                    <span>Mobile Store</span>
+
+                </div>
+
+                <p>
+
+                    Your trusted destination for
+                    quality mobile accessories
+                    at affordable prices.
+
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#shop">
+                    Shop
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Categories
+                </h3>
+
+                <a href="#shop">
+                    Mobile Covers
+                </a>
+
+                <a href="#shop">
+                    Handsfree
+                </a>
+
+                <a href="#shop">
+                    Chargers
+                </a>
+
+                <a href="#shop">
+                    Screen Protectors
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Mughal Mobile Store.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         CART OVERLAY
+    ========================================================= -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+        onclick="closeCart()">
+    </div>
+
+
+    <!-- =========================================================
+         CART DRAWER
+    ========================================================= -->
+
+    <aside
+        class="cart-drawer"
+        id="cartDrawer">
+
+
+        <div class="cart-header">
+
+            <h2>
+                Your Cart
+            </h2>
+
+            <button
+                class="close-cart"
+                onclick="closeCart()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems">
+
+            <div class="empty-cart">
+
+                🛒
+
+                <h3>
+                    Your cart is empty
+                </h3>
+
+                <p>
+                    Add products to your cart.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <span id="cartTotal">
+                    Rs. 0
+                </span>
+
+            </div>
+
+
+            <button
+                class="checkout-btn"
+                onclick="openCheckout()">
+
+                Proceed to Checkout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================================
+         CHECKOUT MODAL
+    ========================================================= -->
+
+    <div
+        class="modal"
+        id="checkoutModal">
+
+
+        <div class="modal-box">
+
+
+            <button
+                class="modal-close"
+                onclick="closeCheckout()">
+
+                ×
+
+            </button>
+
+
+            <h2>
+                Complete Your Order
+            </h2>
 
             <p>
-                Contact us anytime for assistance.
+                Enter your details and send the order
+                through WhatsApp.
             </p>
+
+
+            <div class="form-group">
+
+                <label>
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your name">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="03XXXXXXXXX">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Delivery Address
+                </label>
+
+                <textarea
+                    id="customerAddress"
+                    placeholder="Enter complete delivery address">
+                </textarea>
+
+            </div>
+
+
+            <div
+                class="order-summary"
+                id="orderSummary">
+
+            </div>
+
+
+            <button
+                class="whatsapp-order"
+                onclick="sendWhatsAppOrder()">
+
+                💬 Send Order on WhatsApp
+
+            </button>
 
         </div>
 
     </div>
 
-</section>
+
+    <!-- =========================================================
+         TOAST
+    ========================================================= -->
+
+    <div
+        class="toast"
+        id="toast">
+
+        Product added to cart!
+
+    </div>
 
 
-<!-- ABOUT -->
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
 
-<section class="about" id="about">
+    <script>
 
-    <h2>
-        About Mughal Mobile Store
-    </h2>
+        /* =====================================================
+           CART DATA
+        ===================================================== */
 
-    <p>
-        Mughal Mobile Store provides mobile accessories
-        including mobile covers, handsfree, chargers,
-        USB cables, screen protectors and more.
-        Our goal is to provide useful and quality products
-        at affordable prices.
-    </p>
-
-</section>
+        let cart = [];
 
 
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-    <h2>
-        Contact Us
-    </h2>
-
-    <p>
-        Want to place an order? Contact us on WhatsApp.
-    </p>
-
-    <!-- APNA WHATSAPP NUMBER YAHAN LAGAYEN -->
-
-    <a class="button whatsapp"
-       href="https://wa.me/923001234567"
-       target="_blank">
-
-        💬 Order on WhatsApp
-
-    </a>
-
-</section>
+        let selectedCategory = "all";
 
 
-<!-- FOOTER -->
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
 
-<footer>
+        function toggleMenu() {
 
-    <h3>
-        Mughal Mobile Store
-    </h3>
+            const nav =
+                document.getElementById("navLinks");
 
-    <p>
-        Your Trusted Mobile Accessories Store
-    </p>
+            nav.classList.toggle("show");
 
-    <p>
-        © 2026 Mughal Mobile Store. All Rights Reserved.
-    </p>
-
-</footer>
+        }
 
 
-<!-- CART MESSAGE -->
+        function closeMenu() {
 
-<div id="message"></div>
+            const nav =
+                document.getElementById("navLinks");
+
+            nav.classList.remove("show");
+
+        }
 
 
-<script>
+        /* =====================================================
+           ADD TO CART
+        ===================================================== */
 
-function addToCart(productName) {
+        function addToCart(name, price, icon) {
 
-    var message = document.getElementById("message");
+            const existing =
+                cart.find(item => item.name === name);
 
-    message.innerHTML =
-        productName + " added to cart! 🛒";
 
-    message.style.display = "block";
+            if (existing) {
 
-    setTimeout(function() {
+                existing.quantity++;
 
-        message.style.display = "none";
+            } else {
 
-    }, 2000);
+                cart.push({
 
-}
+                    name: name,
 
-</script>
+                    price: price,
+
+                    icon: icon,
+
+                    quantity: 1
+
+                });
+
+            }
+
+
+            updateCart();
+
+
+            showToast(
+                name + " added to cart!"
+            );
+
+        }
+
+
+        /* =====================================================
+           UPDATE CART
+        ===================================================== */
+
+        function updateCart() {
+
+            const cartCount =
+                document.getElementById("cartCount");
+
+
+            let totalQuantity = 0;
+
+
+            cart.forEach(item => {
+
+                totalQuantity += item.quantity;
+
+            });
+
+
+            cartCount.textContent =
+                totalQuantity;
+
+
+            renderCart();
+
+        }
+
+
+        /* =====================================================
+           RENDER CART
+        ===================================================== */
+
+        function renderCart() {
+
+            const container =
+                document.getElementById("cartItems");
+
+
+            const totalElement =
+                document.getElementById("cartTotal");
+
+
+            if (cart.length === 0) {
+
+                container.innerHTML = `
+
+                    <div class="empty-cart">
+
+                        <div style="font-size:50px;">
+                            🛒
+                        </div>
+
+                        <h3>
+                            Your cart is empty
+                        </h3>
+
+                        <p>
+                            Add products to your cart.
+                        </p>
+
+                    </div>
+
+                `;
+
+                totalElement.textContent =
+                    "Rs. 0";
+
+                return;
+
+            }
+
+
+            let total = 0;
+
+
+            let html = "";
+
+
+            cart.forEach((item, index) => {
+
+
+                const itemTotal =
+                    item.price * item.quantity;
+
+
+                total += itemTotal;
+
+
+                html += `
+
+                    <div class="cart-item">
+
+                        <div class="cart-item-icon">
+                            ${item.icon}
+                        </div>
+
+
+                        <div>
+
+                            <h4>
+                                ${item.name}
+                            </h4>
+
+                            <div class="cart-item-price">
+                                Rs. ${item.price.toLocaleString()}
+                            </div>
+
+
+                            <div class="quantity">
+
+                                <button
+                                    onclick="changeQuantity(
+                                        ${index},
+                                        -1
+                                    )">
+
+                                    −
+
+                                </button>
+
+
+                                <strong>
+                                    ${item.quantity}
+                                </strong>
+
+
+                                <button
+                                    onclick="changeQuantity(
+                                        ${index},
+                                        1
+                                    )">
+
+                                    +
+
+                                </button>
+
+                            </div>
+
+
+                            <button
+                                class="remove-item"
+                                onclick="removeItem(${index})">
+
+                                Remove
+
+                            </button>
+
+                        </div>
+
+
+                        <strong>
+
+                            Rs.
+                            ${itemTotal.toLocaleString()}
+
+                        </strong>
+
+                    </div>
+
+                `;
+
+            });
+
+
+            container.innerHTML =
+                html;
+
+
+            totalElement.textContent =
+                "Rs. " + total.toLocaleString();
+
+        }
+
+
+        /* =====================================================
+           CHANGE QUANTITY
+        ===================================================== */
+
+        function changeQuantity(index, change) {
+
+            cart[index].quantity += change;
+
+
+            if (cart[index].quantity <= 0) {
+
+                cart.splice(index, 1);
+
+            }
+
+
+            updateCart();
+
+        }
+
+
+        /* =====================================================
+           REMOVE ITEM
+        ===================================================== */
+
+        function removeItem(index) {
+
+            const name =
+                cart[index].name;
+
+
+            cart.splice(index, 1);
+
+
+            updateCart();
+
+
+            showToast(
+                name + " removed."
+            );
+
+        }
+
+
+        /* =====================================================
+           OPEN CART
+        ===================================================== */
+
+        function openCart() {
+
+            document
+                .getElementById("cartDrawer")
+                .classList.add("active");
+
+
+            document
+                .getElementById("cartOverlay")
+                .classList.add("active");
+
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+        /* =====================================================
+           CLOSE CART
+        ===================================================== */
+
+        function closeCart() {
+
+            document
+                .getElementById("cartDrawer")
+                .classList.remove("active");
+
+
+            document
+                .getElementById("cartOverlay")
+                .classList.remove("active");
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        /* =====================================================
+           FILTER PRODUCTS
+        ===================================================== */
+
+        function filterProducts() {
+
+            const search =
+                document
+                    .getElementById("searchInput")
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+
+            const products =
+                document.querySelectorAll(
+                    ".product-card"
+                );
+
+
+            let visible = 0;
+
+
+            products.forEach(product => {
+
+                const name =
+                    product
+                        .getAttribute("data-name")
+                        .toLowerCase();
+
+
+                const category =
+                    product
+                        .getAttribute("data-category");
+
+
+                const matchesSearch =
+                    name.includes(search);
+
+
+                const matchesCategory =
+                    selectedCategory === "all" ||
+                    category === selectedCategory;
+
+
+                if (
+                    matchesSearch &&
+                    matchesCategory
+                ) {
+
+                    product.style.display =
+                        "";
+
+                    visible++;
+
+                } else {
+
+                    product.style.display =
+                        "none";
+
+                }
+
+            });
+
+
+            document
+                .getElementById("noProducts")
+                .style.display =
+                    visible === 0
+                        ? "block"
+                        : "none";
+
+        }
+
+
+        /* =====================================================
+           FILTER CATEGORY
+        ===================================================== */
+
+        function filterCategory(category, button) {
+
+            selectedCategory =
+                category;
+
+
+            document
+                .querySelectorAll(
+                    ".category-btn"
+                )
+                .forEach(btn => {
+
+                    btn.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+            button.classList.add(
+                "active"
+            );
+
+
+            filterProducts();
+
+        }
+
+
+        /* =====================================================
+           OPEN CHECKOUT
+        ===================================================== */
+
+        function openCheckout() {
+
+            if (cart.length === 0) {
+
+                showToast(
+                    "Your cart is empty."
+                );
+
+                return;
+
+            }
+
+
+            renderOrderSummary();
+
+
+            document
+                .getElementById(
+                    "checkoutModal"
+                )
+                .classList.add("active");
+
+
+            closeCart();
+
+        }
+
+
+        /* =====================================================
+           CLOSE CHECKOUT
+        ===================================================== */
+
+        function closeCheckout() {
+
+            document
+                .getElementById(
+                    "checkoutModal"
+                )
+                .classList.remove("active");
+
+        }
+
+
+        /* =====================================================
+           ORDER SUMMARY
+        ===================================================== */
+
+        function renderOrderSummary() {
+
+            let total = 0;
+
+
+            let html =
+                "<strong>Order Summary</strong><br><br>";
+
+
+            cart.forEach(item => {
+
+                const itemTotal =
+                    item.price * item.quantity;
+
+
+                total += itemTotal;
+
+
+                html += `
+
+                    ${item.name}
+                    × ${item.quantity}
+                    — Rs. ${itemTotal.toLocaleString()}
+
+                    <br>
+
+                `;
+
+            });
+
+
+            html += `
+
+                <br>
+
+                <strong>
+                    Total:
+                    Rs. ${total.toLocaleString()}
+                </strong>
+
+            `;
+
+
+            document
+                .getElementById(
+                    "orderSummary"
+                )
+                .innerHTML =
+                    html;
+
+        }
+
+
+        /* =====================================================
+           WHATSAPP ORDER
+        ===================================================== */
+
+        function sendWhatsAppOrder() {
+
+            const name =
+                document
+                    .getElementById(
+                        "customerName"
+                    )
+                    .value
+                    .trim();
+
+
+            const phone =
+                document
+                    .getElementById(
+                        "customerPhone"
+                    )
+                    .value
+                    .trim();
+
+
+            const address =
+                document
+                    .getElementById(
+                        "customerAddress"
+                    )
+                    .value
+                    .trim();
+
+
+            if (
+                name === "" ||
+                phone === "" ||
+                address === ""
+            ) {
+
+                alert(
+                    "Please fill in all customer details."
+                );
+
+                return;
+
+            }
+
+
+            let message =
+                "Hello Mughal Mobile Store!%0A%0A";
+
+
+            message +=
+                "*New Order*%0A%0A";
+
+
+            message +=
+                "Name: " +
+                encodeURIComponent(name) +
+                "%0A";
+
+
+            message +=
+                "Phone: " +
+                encodeURIComponent(phone) +
+                "%0A";
+
+
+            message +=
+                "Address: " +
+                encodeURIComponent(address) +
+                "%0A%0A";
+
+
+            message +=
+                "*Products:*%0A";
+
+
+            let total = 0;
+
+
+            cart.forEach(item => {
+
+                const itemTotal =
+                    item.price *
+                    item.quantity;
+
+
+                total += itemTotal;
+
+
+                message +=
+
+                    encodeURIComponent(
+                        item.name
+                    ) +
+
+                    " x " +
+
+                    item.quantity +
+
+                    " = Rs. " +
+
+                    itemTotal.toLocaleString() +
+
+                    "%0A";
+
+            });
+
+
+            message +=
+                "%0A*Total: Rs. " +
+                total.toLocaleString() +
+                "*";
+
+
+            /*
+             * IMPORTANT:
+             * Replace this number with
+             * your own WhatsApp number.
+             *
+             * Pakistan format:
+             * 923XXXXXXXXX
+             */
+
+            const whatsappNumber =
+                "923001234567";
+
+
+            const url =
+                "https://wa.me/" +
+                whatsappNumber +
+                "?text=" +
+                message;
+
+
+            window.open(
+                url,
+                "_blank"
+            );
+
+        }
+
+
+        /* =====================================================
+           TOAST
+        ===================================================== */
+
+        function showToast(message) {
+
+            const toast =
+                document.getElementById(
+                    "toast"
+                );
+
+
+            toast.textContent =
+                message;
+
+
+            toast.classList.add(
+                "show"
+            );
+
+
+            setTimeout(() => {
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            }, 2200);
+
+        }
+
+
+        /* =====================================================
+           CLOSE MODAL WHEN CLICK OUTSIDE
+        ===================================================== */
+
+        document
+            .getElementById("checkoutModal")
+            .addEventListener(
+                "click",
+                function(event) {
+
+                    if (
+                        event.target ===
+                        this
+                    ) {
+
+                        closeCheckout();
+
+                    }
+
+                }
+            );
+
+
+        /* =====================================================
+           INITIAL LOAD
+        ===================================================== */
+
+        updateCart();
+
+    </script>
+
 
 </body>
+
 </html>
