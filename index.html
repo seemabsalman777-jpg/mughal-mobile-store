@@ -6,14 +6,9 @@
 
 <title>Mughal Mobile Store | Mobile Accessories</title>
 
-<meta name="description" content="Mughal Mobile Store - Shop mobile covers, handsfree, screen protectors and mobile accessories online.">
+<meta name="description" content="Mughal Mobile Store - Shop mobile covers, handsfree, chargers, cables and screen protectors at affordable prices.">
 
 <style>
-
-/* =========================
-   GENERAL
-========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -26,21 +21,19 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f6f7fb;
-    color: #1f2937;
+    background: #f5f6f8;
+    color: #222;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
 header {
-    background: #111827;
+    background: #111;
     color: white;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
 }
 
 .navbar {
@@ -56,147 +49,143 @@ header {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    text-decoration: none;
-    color: white;
+    white-space: nowrap;
 }
 
 .logo span {
-    color: #f59e0b;
+    color: #f5c542;
 }
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 22px;
     list-style: none;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #f59e0b;
+    color: #f5c542;
 }
 
 .cart-button {
+    background: #f5c542;
+    color: #111;
     border: none;
-    background: #f59e0b;
-    color: #111827;
-    padding: 10px 16px;
+    padding: 11px 17px;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
+    font-size: 15px;
 }
 
 .cart-count {
-    background: #111827;
+    background: #111;
     color: white;
     padding: 2px 7px;
     border-radius: 20px;
     margin-left: 4px;
 }
 
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero {
-    background: linear-gradient(135deg, #111827, #374151);
+    background: linear-gradient(135deg, #111, #292929);
     color: white;
-    padding: 80px 20px;
-}
-
-.hero-container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.hero-text {
-    max-width: 650px;
+    padding: 85px 20px;
+    text-align: center;
 }
 
 .hero h1 {
     font-size: 48px;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .hero h1 span {
-    color: #f59e0b;
+    color: #f5c542;
 }
 
 .hero p {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #e5e7eb;
+    font-size: 20px;
+    color: #ddd;
     margin-bottom: 30px;
 }
 
-.hero-button {
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
     display: inline-block;
-    background: #f59e0b;
-    color: #111827;
     padding: 14px 25px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
 }
 
-.hero-button:hover {
-    background: #fbbf24;
+.btn-primary {
+    background: #f5c542;
+    color: #111;
 }
 
-.hero-icon {
-    font-size: 150px;
+.btn-dark {
+    background: white;
+    color: #111;
 }
 
-/* =========================
-   FEATURES
-========================= */
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ================= FEATURES ================= */
 
 .features {
-    max-width: 1200px;
-    margin: 40px auto;
+    max-width: 1100px;
+    margin: 35px auto;
     padding: 0 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
 }
 
 .feature {
     background: white;
-    padding: 25px;
+    padding: 25px 15px;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 }
 
 .feature-icon {
-    font-size: 35px;
+    font-size: 32px;
     margin-bottom: 10px;
 }
 
 .feature h3 {
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 .feature p {
-    color: #6b7280;
+    color: #666;
+    font-size: 14px;
 }
 
-/* =========================
-   SHOP
-========================= */
+/* ================= SECTION ================= */
 
-.shop {
+.section {
     max-width: 1200px;
-    margin: 70px auto;
+    margin: 60px auto;
     padding: 0 20px;
 }
 
@@ -207,61 +196,61 @@ header {
 
 .section-title h2 {
     font-size: 34px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .section-title p {
-    color: #6b7280;
+    color: #666;
 }
 
-/* =========================
-   SEARCH + CATEGORY
-========================= */
+/* ================= SEARCH ================= */
 
-.shop-controls {
+.search-area {
+    max-width: 700px;
+    margin: 0 auto 30px;
     display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.search-box {
-    flex: 1;
-    min-width: 250px;
-}
-
-.search-box input {
+.search-area input {
     width: 100%;
-    padding: 14px;
-    border: 1px solid #d1d5db;
+    padding: 15px;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 16px;
+    outline: none;
 }
 
-.category-buttons {
+.search-area input:focus {
+    border-color: #f5c542;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories {
     display: flex;
-    gap: 8px;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 35px;
 }
 
 .category-btn {
-    border: 1px solid #d1d5db;
+    padding: 10px 18px;
+    border: 1px solid #ddd;
     background: white;
-    padding: 12px 16px;
-    border-radius: 8px;
+    border-radius: 30px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .category-btn:hover,
 .category-btn.active {
-    background: #111827;
+    background: #111;
     color: white;
 }
 
-/* =========================
-   PRODUCTS
-========================= */
+/* ================= PRODUCTS ================= */
 
 .products {
     display: grid;
@@ -273,22 +262,22 @@ header {
     background: white;
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
 .product:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
 }
 
 .product-image {
-    height: 190px;
+    height: 210px;
+    background: #f0f0f0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #e5e7eb, #f9fafb);
-    font-size: 75px;
+    font-size: 80px;
 }
 
 .product-info {
@@ -296,8 +285,9 @@ header {
 }
 
 .product-category {
-    color: #6b7280;
-    font-size: 13px;
+    color: #888;
+    font-size: 12px;
+    text-transform: uppercase;
     margin-bottom: 7px;
 }
 
@@ -307,344 +297,312 @@ header {
 }
 
 .product-description {
-    color: #6b7280;
+    color: #666;
     font-size: 14px;
     min-height: 40px;
-}
-
-.product-bottom {
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+    margin-bottom: 12px;
 }
 
 .price {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
+    margin-bottom: 14px;
 }
 
-.add-cart {
+.old-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 6px;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 12px;
     border: none;
-    background: #111827;
+    border-radius: 8px;
+    background: #111;
     color: white;
-    padding: 10px 13px;
-    border-radius: 7px;
+    font-weight: bold;
     cursor: pointer;
+    font-size: 15px;
 }
 
-.add-cart:hover {
-    background: #f59e0b;
-    color: #111827;
+.add-btn:hover {
+    background: #333;
 }
 
-/* =========================
-   ABOUT
-========================= */
+/* ================= ABOUT ================= */
 
 .about {
     background: white;
-    padding: 70px 20px;
-}
-
-.about-container {
-    max-width: 900px;
-    margin: auto;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
     text-align: center;
 }
 
 .about h2 {
-    font-size: 34px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .about p {
-    color: #6b7280;
-    font-size: 17px;
+    color: #666;
     line-height: 1.8;
+    max-width: 800px;
+    margin: auto;
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* ================= CONTACT ================= */
 
-.contact {
-    max-width: 900px;
-    margin: 70px auto;
-    padding: 0 20px;
+.contact-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px;
     text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
 }
 
-.contact h2 {
-    font-size: 34px;
-    margin-bottom: 15px;
+.contact-card .icon {
+    font-size: 35px;
+    margin-bottom: 12px;
 }
 
-.contact p {
-    color: #6b7280;
-    margin-bottom: 25px;
+.contact-card h3 {
+    margin-bottom: 8px;
 }
 
-.whatsapp-button {
-    display: inline-block;
-    background: #25D366;
-    color: white;
-    text-decoration: none;
-    padding: 14px 25px;
-    border-radius: 8px;
-    font-weight: bold;
+.contact-card p {
+    color: #666;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background: #111827;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.footer-logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.footer-text {
-    color: #d1d5db;
-    margin-bottom: 15px;
-}
-
-/* =========================
-   CART SIDEBAR
-========================= */
+/* ================= CART ================= */
 
 .cart-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 2000;
+    background: rgba(0,0,0,0.55);
     display: none;
+    z-index: 2000;
 }
 
 .cart-overlay.show {
     display: block;
 }
 
-.cart-sidebar {
+.cart {
     position: fixed;
+    right: 0;
     top: 0;
-    right: -450px;
-    width: 420px;
-    max-width: 95%;
     height: 100%;
+    width: 420px;
+    max-width: 100%;
     background: white;
     z-index: 2100;
-    transition: right 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    padding: 25px;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: 0.3s;
 }
 
-.cart-sidebar.show {
-    right: 0;
+.cart.show {
+    transform: translateX(0);
 }
 
 .cart-header {
-    padding: 20px;
-    border-bottom: 1px solid #e5e7eb;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .close-cart {
     border: none;
-    background: none;
-    font-size: 25px;
+    background: #eee;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
     cursor: pointer;
-}
-
-.cart-items {
-    padding: 20px;
-    overflow-y: auto;
-    flex: 1;
+    font-size: 20px;
 }
 
 .cart-item {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    border-bottom: 1px solid #e5e7eb;
+    gap: 12px;
     padding: 15px 0;
+    border-bottom: 1px solid #eee;
 }
 
-.cart-item h4 {
-    margin-bottom: 7px;
+.cart-item-icon {
+    width: 55px;
+    height: 55px;
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 25px;
 }
 
-.quantity-controls {
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h4 {
+    margin-bottom: 5px;
+}
+
+.cart-item-price {
+    font-weight: bold;
+}
+
+.quantity {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-top: 8px;
+    margin-top: 7px;
 }
 
-.quantity-controls button {
+.quantity button {
     width: 28px;
     height: 28px;
-    border: 1px solid #d1d5db;
+    border: 1px solid #ddd;
     background: white;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.remove-item {
-    color: #dc2626;
+.remove-btn {
+    color: #d00;
     border: none;
     background: none;
     cursor: pointer;
-}
-
-.cart-footer {
-    padding: 20px;
-    border-top: 1px solid #e5e7eb;
+    margin-top: 5px;
 }
 
 .cart-total {
+    border-top: 2px solid #111;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.total-row {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
-.checkout-button {
+.checkout-btn {
     width: 100%;
     padding: 14px;
     border: none;
-    background: #f59e0b;
-    color: #111827;
     border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* =========================
-   CHECKOUT MODAL
-========================= */
-
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: 3000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.modal-overlay.show {
-    display: flex;
-}
-
-.checkout-modal {
-    background: white;
-    width: 500px;
-    max-width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    border-radius: 14px;
-    padding: 25px;
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.close-modal {
-    border: none;
-    background: none;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #d1d5db;
-    border-radius: 7px;
-    font-size: 15px;
-}
-
-.form-group textarea {
-    min-height: 90px;
-    resize: vertical;
-}
-
-.place-order {
-    width: 100%;
-    border: none;
     background: #25D366;
     color: white;
-    padding: 14px;
-    border-radius: 8px;
     font-weight: bold;
-    cursor: pointer;
     font-size: 16px;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background: #1da851;
 }
 
 .empty-cart {
     text-align: center;
-    padding: 40px 10px;
-    color: #6b7280;
+    padding: 50px 10px;
+    color: #777;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* ================= FOOTER ================= */
 
-@media (max-width: 900px) {
+footer {
+    background: #111;
+    color: white;
+    margin-top: 70px;
+    padding: 45px 20px 20px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+}
+
+.footer-column p,
+.footer-column a {
+    color: #bbb;
+    text-decoration: none;
+    line-height: 1.9;
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 35px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    text-align: center;
+    color: #aaa;
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #25D366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    text-decoration: none;
+    z-index: 1500;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 950px) {
 
     .products {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-box {
         grid-template-columns: 1fr;
     }
 
-    .hero-container {
-        text-align: center;
-        justify-content: center;
-    }
-
-    .hero-icon {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 38px;
+    .footer-content {
+        grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     .navbar {
         flex-wrap: wrap;
@@ -654,58 +612,80 @@ footer {
         order: 3;
         width: 100%;
         justify-content: center;
-    }
-
-    .products {
-        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .hero {
-        padding: 60px 20px;
+        padding: 60px 15px;
     }
 
     .hero h1 {
         font-size: 34px;
     }
 
-    .section-title h2,
-    .about h2,
-    .contact h2 {
+    .hero p {
+        font-size: 17px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
         font-size: 28px;
     }
 
-    .cart-sidebar {
-        width: 100%;
+    .about {
+        padding: 25px;
     }
 }
 
+@media (max-width: 450px) {
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .nav-links {
+        font-size: 13px;
+    }
+
+    .cart-button {
+        padding: 9px 12px;
+    }
+
+    .search-area {
+        flex-direction: column;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- ================= NAVBAR ================= -->
 
 <header>
 
 <nav class="navbar">
 
-<a href="#" class="logo">
-    Mughal <span>Mobile</span>
-</a>
+<div class="logo">
+Mughal <span>Mobile Store</span>
+</div>
 
 <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#shop">Shop</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 
 <button class="cart-button" onclick="openCart()">
-    🛒 Cart
-    <span class="cart-count" id="cartCount">0</span>
+🛒 Cart <span class="cart-count" id="cartCount">0</span>
 </button>
 
 </nav>
@@ -713,203 +693,158 @@ footer {
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
-<div class="hero-container">
-
-<div class="hero-text">
-
 <h1>
-    Upgrade Your <span>Mobile</span>
+Mughal <span>Mobile Store</span>
 </h1>
 
 <p>
-    Discover quality mobile accessories at affordable prices.
-    Shop mobile covers, handsfree, screen protectors and more.
+Quality Mobile Accessories at Affordable Prices
 </p>
 
-<a href="#shop" class="hero-button">
-    Shop Now
+<div class="hero-buttons">
+
+<a href="#products" class="btn btn-primary">
+Shop Now
+</a>
+
+<a href="#contact" class="btn btn-dark">
+Contact Us
 </a>
 
 </div>
 
-<div class="hero-icon">
-    📱
-</div>
-
-</div>
-
 </section>
 
 
-<!-- =========================
-     FEATURES
-========================= -->
+<!-- ================= FEATURES ================= -->
 
 <section class="features">
 
 <div class="feature">
-
 <div class="feature-icon">🚚</div>
-
 <h3>Fast Delivery</h3>
-
-<p>
-    Quick and reliable delivery.
-</p>
-
+<p>Quick delivery across Pakistan.</p>
 </div>
 
-
 <div class="feature">
-
 <div class="feature-icon">💰</div>
-
-<h3>Affordable Prices</h3>
-
-<p>
-    Quality products at great prices.
-</p>
-
+<h3>Best Prices</h3>
+<p>Affordable mobile accessories.</p>
 </div>
 
+<div class="feature">
+<div class="feature-icon">🛡️</div>
+<h3>Quality Products</h3>
+<p>Reliable products for everyday use.</p>
+</div>
 
 <div class="feature">
-
-<div class="feature-icon">📱</div>
-
-<h3>Easy Ordering</h3>
-
-<p>
-    Order easily through WhatsApp.
-</p>
-
+<div class="feature-icon">📞</div>
+<h3>Customer Support</h3>
+<p>We are here to help you.</p>
 </div>
 
 </section>
 
 
-<!-- =========================
-     SHOP
-========================= -->
+<!-- ================= PRODUCTS ================= -->
 
-<section class="shop" id="shop">
+<section class="section" id="products">
 
 <div class="section-title">
 
 <h2>Our Products</h2>
 
 <p>
-    Find the perfect accessories for your mobile.
+Find the perfect accessories for your mobile.
 </p>
 
 </div>
 
 
-<div class="shop-controls">
+<!-- SEARCH -->
 
-<div class="search-box">
+<div class="search-area">
 
 <input
-    type="text"
-    id="searchInput"
-    placeholder="🔎 Search products..."
-    onkeyup="searchProducts()"
+type="text"
+id="searchInput"
+placeholder="🔍 Search products..."
+onkeyup="searchProducts()"
 >
 
 </div>
 
 
-<div class="category-buttons">
+<!-- CATEGORIES -->
 
-<button
-    class="category-btn active"
-    onclick="filterProducts('all', this)"
->
-    All
+<div class="categories">
+
+<button class="category-btn active" onclick="filterCategory('all', this)">
+All
 </button>
 
-<button
-    class="category-btn"
-    onclick="filterProducts('covers', this)"
->
-    Covers
+<button class="category-btn" onclick="filterCategory('cover', this)">
+Mobile Covers
 </button>
 
-<button
-    class="category-btn"
-    onclick="filterProducts('audio', this)"
->
-    Audio
+<button class="category-btn" onclick="filterCategory('handsfree', this)">
+Handsfree
 </button>
 
-<button
-    class="category-btn"
-    onclick="filterProducts('protection', this)"
->
-    Protection
+<button class="category-btn" onclick="filterCategory('protector', this)">
+Screen Protectors
 </button>
 
-<button
-    class="category-btn"
-    onclick="filterProducts('charging', this)"
->
-    Charging
+<button class="category-btn" onclick="filterCategory('charger', this)">
+Chargers
+</button>
+
+<button class="category-btn" onclick="filterCategory('cable', this)">
+Cables
 </button>
 
 </div>
 
-</div>
 
+<!-- PRODUCTS -->
 
-<div class="products" id="productsContainer">
+<div class="products" id="productGrid">
 
 
 <!-- PRODUCT 1 -->
 
-<div
-    class="product"
-    data-category="covers"
-    data-name="Premium Mobile Cover"
->
+<div class="product" data-category="cover" data-name="Premium Mobile Cover">
 
 <div class="product-image">
-    📱
+📱
 </div>
 
 <div class="product-info">
 
 <div class="product-category">
-    Mobile Covers
+Mobile Cover
 </div>
 
-<h3>
-    Premium Mobile Cover
-</h3>
+<h3>Premium Mobile Cover</h3>
 
 <p class="product-description">
-    Stylish and protective mobile cover.
+Stylish and durable protection for your mobile.
 </p>
 
-<div class="product-bottom">
-
-<span class="price">
-    Rs. 799
-</span>
-
-<button
-    class="add-cart"
-    onclick="addToCart('Premium Mobile Cover', 799)"
->
-    Add to Cart
-</button>
-
+<div class="price">
+Rs. 799
+<span class="old-price">Rs. 999</span>
 </div>
+
+<button class="add-btn"
+onclick="addToCart('Premium Mobile Cover',799,'📱')">
+Add to Cart
+</button>
 
 </div>
 
@@ -918,44 +853,33 @@ footer {
 
 <!-- PRODUCT 2 -->
 
-<div
-    class="product"
-    data-category="audio"
-    data-name="Premium Handsfree"
->
+<div class="product" data-category="handsfree" data-name="Premium Handsfree">
 
 <div class="product-image">
-    🎧
+🎧
 </div>
 
 <div class="product-info">
 
 <div class="product-category">
-    Audio
+Handsfree
 </div>
 
-<h3>
-    Premium Handsfree
-</h3>
+<h3>Premium Handsfree</h3>
 
 <p class="product-description">
-    Comfortable and clear sound handsfree.
+Clear sound and comfortable design.
 </p>
 
-<div class="product-bottom">
-
-<span class="price">
-    Rs. 1,299
-</span>
-
-<button
-    class="add-cart"
-    onclick="addToCart('Premium Handsfree', 1299)"
->
-    Add to Cart
-</button>
-
+<div class="price">
+Rs. 1,299
+<span class="old-price">Rs. 1,499</span>
 </div>
+
+<button class="add-btn"
+onclick="addToCart('Premium Handsfree',1299,'🎧')">
+Add to Cart
+</button>
 
 </div>
 
@@ -964,44 +888,33 @@ footer {
 
 <!-- PRODUCT 3 -->
 
-<div
-    class="product"
-    data-category="protection"
-    data-name="Tempered Glass"
->
+<div class="product" data-category="protector" data-name="Tempered Glass">
 
 <div class="product-image">
-    🛡️
+🛡️
 </div>
 
 <div class="product-info">
 
 <div class="product-category">
-    Screen Protection
+Screen Protector
 </div>
 
-<h3>
-    Tempered Glass
-</h3>
+<h3>Tempered Glass</h3>
 
 <p class="product-description">
-    Strong protection for your mobile screen.
+Protect your screen from scratches and damage.
 </p>
 
-<div class="product-bottom">
-
-<span class="price">
-    Rs. 499
-</span>
-
-<button
-    class="add-cart"
-    onclick="addToCart('Tempered Glass', 499)"
->
-    Add to Cart
-</button>
-
+<div class="price">
+Rs. 499
+<span class="old-price">Rs. 599</span>
 </div>
+
+<button class="add-btn"
+onclick="addToCart('Tempered Glass',499,'🛡️')">
+Add to Cart
+</button>
 
 </div>
 
@@ -1010,44 +923,33 @@ footer {
 
 <!-- PRODUCT 4 -->
 
-<div
-    class="product"
-    data-category="charging"
-    data-name="Fast Charger"
->
+<div class="product" data-category="charger" data-name="Fast Charger">
 
 <div class="product-image">
-    🔌
+🔌
 </div>
 
 <div class="product-info">
 
 <div class="product-category">
-    Charging
+Charger
 </div>
 
-<h3>
-    Fast Charger
-</h3>
+<h3>Fast Charger</h3>
 
 <p class="product-description">
-    Reliable charger for everyday use.
+Fast and reliable charging for your device.
 </p>
 
-<div class="product-bottom">
-
-<span class="price">
-    Rs. 1,499
-</span>
-
-<button
-    class="add-cart"
-    onclick="addToCart('Fast Charger', 1499)"
->
-    Add to Cart
-</button>
-
+<div class="price">
+Rs. 1,499
+<span class="old-price">Rs. 1,799</span>
 </div>
+
+<button class="add-btn"
+onclick="addToCart('Fast Charger',1499,'🔌')">
+Add to Cart
+</button>
 
 </div>
 
@@ -1056,44 +958,33 @@ footer {
 
 <!-- PRODUCT 5 -->
 
-<div
-    class="product"
-    data-category="charging"
-    data-name="USB Cable"
->
+<div class="product" data-category="cable" data-name="Fast Charging Cable">
 
 <div class="product-image">
-    🔋
+🔋
 </div>
 
 <div class="product-info">
 
 <div class="product-category">
-    Charging
+Cable
 </div>
 
-<h3>
-    USB Charging Cable
-</h3>
+<h3>Fast Charging Cable</h3>
 
 <p class="product-description">
-    Durable cable for fast and reliable charging.
+Durable cable with fast charging support.
 </p>
 
-<div class="product-bottom">
-
-<span class="price">
-    Rs. 599
-</span>
-
-<button
-    class="add-cart"
-    onclick="addToCart('USB Charging Cable', 599)"
->
-    Add to Cart
-</button>
-
+<div class="price">
+Rs. 699
+<span class="old-price">Rs. 899</span>
 </div>
+
+<button class="add-btn"
+onclick="addToCart('Fast Charging Cable',699,'🔋')">
+Add to Cart
+</button>
 
 </div>
 
@@ -1102,41 +993,102 @@ footer {
 
 <!-- PRODUCT 6 -->
 
-<div
-    class="product"
-    data-category="covers"
-    data-name="Transparent Mobile Cover"
->
+<div class="product" data-category="cover" data-name="Silicone Mobile Cover">
 
 <div class="product-image">
-    📲
+📲
 </div>
 
 <div class="product-info">
 
 <div class="product-category">
-    Mobile Covers
+Mobile Cover
 </div>
 
-<h3>
-    Transparent Mobile Cover
-</h3>
+<h3>Silicone Mobile Cover</h3>
 
 <p class="product-description">
-    Simple transparent protection for your phone.
+Soft silicone cover with premium finish.
 </p>
 
-<div class="product-bottom">
+<div class="price">
+Rs. 899
+<span class="old-price">Rs. 1,099</span>
+</div>
 
-<span class="price">
-    Rs. 599
-</span>
+<button class="add-btn"
+onclick="addToCart('Silicone Mobile Cover',899,'📲')">
+Add to Cart
+</button>
 
-<button
-    class="add-cart"
-    onclick="addToCart('Transparent Mobile Cover', 599)"
->
-    Add to Cart
+</div>
+
+</div>
+
+
+<!-- PRODUCT 7 -->
+
+<div class="product" data-category="handsfree" data-name="Wireless Earbuds">
+
+<div class="product-image">
+🎶
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Handsfree
+</div>
+
+<h3>Wireless Earbuds</h3>
+
+<p class="product-description">
+Wireless earbuds with convenient controls.
+</p>
+
+<div class="price">
+Rs. 2,499
+<span class="old-price">Rs. 2,999</span>
+</div>
+
+<button class="add-btn"
+onclick="addToCart('Wireless Earbuds',2499,'🎶')">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 8 -->
+
+<div class="product" data-category="charger" data-name="Car Charger">
+
+<div class="product-image">
+🚗
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Charger
+</div>
+
+<h3>Car Charger</h3>
+
+<p class="product-description">
+Charge your phone while travelling.
+</p>
+
+<div class="price">
+Rs. 999
+<span class="old-price">Rs. 1,199</span>
+</div>
+
+<button class="add-btn"
+onclick="addToCart('Car Charger',999,'🚗')">
+Add to Cart
 </button>
 
 </div>
@@ -1145,28 +1097,23 @@ footer {
 
 </div>
 
-</div>
-
 </section>
 
 
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ================= ABOUT ================= -->
 
-<section class="about" id="about">
+<section class="section" id="about">
 
-<div class="about-container">
+<div class="about">
 
-<h2>
-    About Mughal Mobile Store
-</h2>
+<h2>About Mughal Mobile Store</h2>
 
 <p>
-    Welcome to Mughal Mobile Store. We provide useful,
-    stylish and affordable mobile accessories for everyday use.
-    Our goal is to make online shopping simple, convenient
-    and reliable for our customers.
+Welcome to Mughal Mobile Store. We provide quality mobile
+accessories including mobile covers, handsfree, screen protectors,
+chargers and cables at affordable prices. Our goal is to provide
+reliable products and a simple shopping experience for customers
+across Pakistan.
 </p>
 
 </div>
@@ -1174,417 +1121,300 @@ footer {
 </section>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- ================= CONTACT ================= -->
 
-<section class="contact" id="contact">
+<section class="section" id="contact">
 
-<h2>
-    Contact Us
-</h2>
+<div class="section-title">
+
+<h2>Contact Us</h2>
 
 <p>
-    Have a question or want to place an order?
-    Contact us on WhatsApp.
+Have a question? We are happy to help.
 </p>
+
+</div>
+
+
+<div class="contact-box">
+
+<div class="contact-card">
+
+<div class="icon">📱</div>
+
+<h3>WhatsApp</h3>
+
+<p>0300-1234567</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="icon">📧</div>
+
+<h3>Email</h3>
+
+<p>mughalmobilestore@gmail.com</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="icon">📍</div>
+
+<h3>Location</h3>
+
+<p>Pakistan</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+
+<div class="cart" id="cart">
+
+<div class="cart-header">
+
+<h2>🛒 Your Cart</h2>
+
+<button class="close-cart" onclick="closeCart()">
+×
+</button>
+
+</div>
+
+
+<div id="cartItems"></div>
+
+
+<div class="cart-total">
+
+<div class="total-row">
+
+<span>Total</span>
+
+<span id="cartTotal">
+Rs. 0
+</span>
+
+</div>
+
+
+<button class="checkout-btn" onclick="checkoutWhatsApp()">
+
+📲 Order on WhatsApp
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= WHATSAPP ================= -->
 
 <a
-    class="whatsapp-button"
-    href="https://wa.me/923001234567"
-    target="_blank"
+class="whatsapp"
+href="https://wa.me/923001234567"
+target="_blank"
+title="Chat on WhatsApp"
 >
-    📱 Chat on WhatsApp
+💬
 </a>
 
-</section>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<div class="footer-logo">
-    Mughal Mobile Store
-</div>
+<div class="footer-content">
 
-<p class="footer-text">
-    Quality Mobile Accessories at Affordable Prices
-</p>
+<div class="footer-column">
+
+<h3>Mughal Mobile Store</h3>
 
 <p>
-    © 2026 Mughal Mobile Store. All Rights Reserved.
+Your trusted store for quality mobile accessories.
 </p>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<p><a href="#home">Home</a></p>
+<p><a href="#products">Products</a></p>
+<p><a href="#about">About Us</a></p>
+<p><a href="#contact">Contact</a></p>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>Customer Service</h3>
+
+<p>Cash on Delivery</p>
+<p>Fast Delivery</p>
+<p>Quality Products</p>
+<p>WhatsApp Support</p>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© <span id="year"></span> Mughal Mobile Store. All Rights Reserved.
+
+</div>
 
 </footer>
 
 
-<!-- =========================
-     CART OVERLAY
-========================= -->
-
-<div
-    class="cart-overlay"
-    id="cartOverlay"
-    onclick="closeCart()"
->
-</div>
-
-
-<!-- =========================
-     CART SIDEBAR
-========================= -->
-
-<div
-    class="cart-sidebar"
-    id="cartSidebar"
->
-
-<div class="cart-header">
-
-<h2>
-    Your Cart
-</h2>
-
-<button
-    class="close-cart"
-    onclick="closeCart()"
->
-    ×
-</button>
-
-</div>
-
-
-<div
-    class="cart-items"
-    id="cartItems"
->
-</div>
-
-
-<div class="cart-footer">
-
-<div class="cart-total">
-
-<span>
-    Total:
-</span>
-
-<span id="cartTotal">
-    Rs. 0
-</span>
-
-</div>
-
-<button
-    class="checkout-button"
-    onclick="openCheckout()"
->
-    Proceed to Checkout
-</button>
-
-</div>
-
-</div>
-
-
-<!-- =========================
-     CHECKOUT MODAL
-========================= -->
-
-<div
-    class="modal-overlay"
-    id="checkoutModal"
->
-
-<div class="checkout-modal">
-
-<div class="modal-header">
-
-<h2>
-    Checkout
-</h2>
-
-<button
-    class="close-modal"
-    onclick="closeCheckout()"
->
-    ×
-</button>
-
-</div>
-
-
-<form onsubmit="placeOrder(event)">
-
-<div class="form-group">
-
-<label>
-    Full Name
-</label>
-
-<input
-    type="text"
-    id="customerName"
-    placeholder="Enter your name"
-    required
->
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-    Phone Number
-</label>
-
-<input
-    type="tel"
-    id="customerPhone"
-    placeholder="03XXXXXXXXX"
-    required
->
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-    Delivery Address
-</label>
-
-<textarea
-    id="customerAddress"
-    placeholder="Enter complete delivery address"
-    required
-></textarea>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-    City
-</label>
-
-<input
-    type="text"
-    id="customerCity"
-    placeholder="Enter your city"
-    required
->
-
-</div>
-
-
-<button
-    type="submit"
-    class="place-order"
->
-    📱 Place Order on WhatsApp
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-
 <script>
 
-/* =========================
-   CART DATA
-========================= */
+/* ================= CART DATA ================= */
 
-let cart = JSON.parse(
-    localStorage.getItem("mughalCart")
-) || [];
+let cart = [];
 
 
-/* =========================
-   ADD TO CART
-========================= */
+/* ================= ADD TO CART ================= */
 
-function addToCart(name, price) {
+function addToCart(name, price, icon) {
 
-    const existingProduct = cart.find(
-        item => item.name === name
-    );
+    const existing = cart.find(item => item.name === name);
 
-    if (existingProduct) {
+    if (existing) {
 
-        existingProduct.quantity += 1;
+        existing.quantity++;
 
     } else {
 
         cart.push({
             name: name,
             price: price,
+            icon: icon,
             quantity: 1
         });
 
     }
 
-    saveCart();
-
     updateCart();
 
     openCart();
-
 }
 
 
-/* =========================
-   SAVE CART
-========================= */
-
-function saveCart() {
-
-    localStorage.setItem(
-        "mughalCart",
-        JSON.stringify(cart)
-    );
-
-}
-
-
-/* =========================
-   UPDATE CART
-========================= */
+/* ================= UPDATE CART ================= */
 
 function updateCart() {
 
-    const cartItems =
-        document.getElementById("cartItems");
+    const cartItems = document.getElementById("cartItems");
 
-    const cartCount =
-        document.getElementById("cartCount");
+    const cartCount = document.getElementById("cartCount");
 
-    const cartTotal =
-        document.getElementById("cartTotal");
+    const cartTotal = document.getElementById("cartTotal");
 
 
-    cartItems.innerHTML = "";
-
-
-    let total = 0;
-
-    let totalQuantity = 0;
+    let totalItems = 0;
+    let totalPrice = 0;
 
 
     if (cart.length === 0) {
 
         cartItems.innerHTML = `
             <div class="empty-cart">
-                🛒
-                <br><br>
-                Your cart is empty.
-                <br>
-                Add some products!
+                <div style="font-size:50px;">🛒</div>
+                <h3>Your cart is empty</h3>
+                <p>Add some products to your cart.</p>
             </div>
         `;
+
+    } else {
+
+        cartItems.innerHTML = "";
+
+        cart.forEach((item, index) => {
+
+            totalItems += item.quantity;
+
+            totalPrice += item.price * item.quantity;
+
+
+            cartItems.innerHTML += `
+
+                <div class="cart-item">
+
+                    <div class="cart-item-icon">
+                        ${item.icon}
+                    </div>
+
+                    <div class="cart-item-info">
+
+                        <h4>${item.name}</h4>
+
+                        <div class="cart-item-price">
+                            Rs. ${item.price.toLocaleString()}
+                        </div>
+
+                        <div class="quantity">
+
+                            <button onclick="changeQuantity(${index}, -1)">
+                                −
+                            </button>
+
+                            <span>
+                                ${item.quantity}
+                            </span>
+
+                            <button onclick="changeQuantity(${index}, 1)">
+                                +
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="remove-btn"
+                            onclick="removeItem(${index})"
+                        >
+                            Remove
+                        </button>
+
+                    </div>
+
+                </div>
+            `;
+        });
 
     }
 
 
-    cart.forEach((item, index) => {
-
-        total += item.price * item.quantity;
-
-        totalQuantity += item.quantity;
-
-
-        const cartItem =
-            document.createElement("div");
-
-        cartItem.className = "cart-item";
-
-
-        cartItem.innerHTML = `
-
-            <div>
-
-                <h4>
-                    ${item.name}
-                </h4>
-
-                <p>
-                    Rs. ${item.price.toLocaleString()}
-                </p>
-
-                <div class="quantity-controls">
-
-                    <button
-                        onclick="changeQuantity(${index}, -1)"
-                    >
-                        -
-                    </button>
-
-                    <span>
-                        ${item.quantity}
-                    </span>
-
-                    <button
-                        onclick="changeQuantity(${index}, 1)"
-                    >
-                        +
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <div>
-
-                <strong>
-                    Rs. ${(item.price * item.quantity).toLocaleString()}
-                </strong>
-
-                <br><br>
-
-                <button
-                    class="remove-item"
-                    onclick="removeFromCart(${index})"
-                >
-                    Remove
-                </button>
-
-            </div>
-
-        `;
-
-
-        cartItems.appendChild(cartItem);
-
-    });
-
-
-    cartCount.textContent =
-        totalQuantity;
-
+    cartCount.textContent = totalItems;
 
     cartTotal.textContent =
-        "Rs. " + total.toLocaleString();
+        "Rs. " + totalPrice.toLocaleString();
 
 }
 
 
-/* =========================
-   CHANGE QUANTITY
-========================= */
+/* ================= CHANGE QUANTITY ================= */
 
 function changeQuantity(index, amount) {
 
     cart[index].quantity += amount;
-
 
     if (cart[index].quantity <= 0) {
 
@@ -1592,74 +1422,50 @@ function changeQuantity(index, amount) {
 
     }
 
-
-    saveCart();
-
     updateCart();
-
 }
 
 
-/* =========================
-   REMOVE PRODUCT
-========================= */
+/* ================= REMOVE ITEM ================= */
 
-function removeFromCart(index) {
+function removeItem(index) {
 
     cart.splice(index, 1);
 
-    saveCart();
-
     updateCart();
-
 }
 
 
-/* =========================
-   OPEN CART
-========================= */
+/* ================= OPEN CART ================= */
 
 function openCart() {
 
-    document
-        .getElementById("cartSidebar")
-        .classList.add("show");
+    document.getElementById("cart").classList.add("show");
 
-    document
-        .getElementById("cartOverlay")
-        .classList.add("show");
+    document.getElementById("cartOverlay").classList.add("show");
 
 }
 
 
-/* =========================
-   CLOSE CART
-========================= */
+/* ================= CLOSE CART ================= */
 
 function closeCart() {
 
-    document
-        .getElementById("cartSidebar")
-        .classList.remove("show");
+    document.getElementById("cart").classList.remove("show");
 
-    document
-        .getElementById("cartOverlay")
-        .classList.remove("show");
+    document.getElementById("cartOverlay").classList.remove("show");
 
 }
 
 
-/* =========================
-   SEARCH PRODUCTS
-========================= */
+/* ================= SEARCH ================= */
 
 function searchProducts() {
 
     const search =
-        document
-            .getElementById("searchInput")
-            .value
-            .toLowerCase();
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase();
 
 
     const products =
@@ -1669,11 +1475,7 @@ function searchProducts() {
     products.forEach(product => {
 
         const name =
-            product
-                .dataset
-                .name
-                .toLowerCase();
-
+            product.dataset.name.toLowerCase();
 
         if (name.includes(search)) {
 
@@ -1690,146 +1492,55 @@ function searchProducts() {
 }
 
 
-/* =========================
-   FILTER PRODUCTS
-========================= */
+/* ================= CATEGORY FILTER ================= */
 
-function filterProducts(category, button) {
+function filterCategory(category, button) {
 
-    const products =
-        document.querySelectorAll(".product");
-
-
-    const buttons =
-        document.querySelectorAll(".category-btn");
-
-
-    buttons.forEach(btn => {
-
-        btn.classList.remove("active");
-
-    });
+    document
+        .querySelectorAll(".category-btn")
+        .forEach(btn => btn.classList.remove("active"));
 
 
     button.classList.add("active");
 
 
-    products.forEach(product => {
+    document
+        .querySelectorAll(".product")
+        .forEach(product => {
 
-        if (
-            category === "all" ||
-            product.dataset.category === category
-        ) {
+            if (
+                category === "all" ||
+                product.dataset.category === category
+            ) {
 
-            product.style.display = "";
+                product.style.display = "";
 
-        } else {
+            } else {
 
-            product.style.display = "none";
+                product.style.display = "none";
 
-        }
+            }
 
-    });
+        });
 
 }
 
 
-/* =========================
-   CHECKOUT
-========================= */
+/* ================= WHATSAPP CHECKOUT ================= */
 
-function openCheckout() {
+function checkoutWhatsApp() {
 
     if (cart.length === 0) {
 
-        alert(
-            "Your cart is empty. Please add a product first."
-        );
+        alert("Your cart is empty. Please add a product first.");
 
         return;
 
     }
 
 
-    document
-        .getElementById("checkoutModal")
-        .classList.add("show");
-
-}
-
-
-function closeCheckout() {
-
-    document
-        .getElementById("checkoutModal")
-        .classList.remove("show");
-
-}
-
-
-/* =========================
-   PLACE ORDER
-========================= */
-
-function placeOrder(event) {
-
-    event.preventDefault();
-
-
-    const name =
-        document
-            .getElementById("customerName")
-            .value;
-
-
-    const phone =
-        document
-            .getElementById("customerPhone")
-            .value;
-
-
-    const address =
-        document
-            .getElementById("customerAddress")
-            .value;
-
-
-    const city =
-        document
-            .getElementById("customerCity")
-            .value;
-
-
-    let orderMessage =
-        "🛍️ *NEW ORDER - MUGHAL MOBILE STORE*%0A%0A";
-
-
-    orderMessage +=
-        "👤 *Customer:* " +
-        encodeURIComponent(name) +
-        "%0A";
-
-
-    orderMessage +=
-        "📞 *Phone:* " +
-        encodeURIComponent(phone) +
-        "%0A";
-
-
-    orderMessage +=
-        "📍 *Address:* " +
-        encodeURIComponent(address) +
-        "%0A";
-
-
-    orderMessage +=
-        "🏙️ *City:* " +
-        encodeURIComponent(city) +
-        "%0A%0A";
-
-
-    orderMessage +=
-        "🛒 *ORDER DETAILS*%0A";
+    let message =
+        "Assalam-o-Alaikum! I want to place an order from Mughal Mobile Store:%0A%0A";
 
 
     let total = 0;
@@ -1840,14 +1551,13 @@ function placeOrder(event) {
         const itemTotal =
             item.price * item.quantity;
 
-
         total += itemTotal;
 
 
-        orderMessage +=
+        message +=
             "• " +
-            encodeURIComponent(item.name) +
-            " x" +
+            item.name +
+            " x " +
             item.quantity +
             " = Rs. " +
             itemTotal.toLocaleString() +
@@ -1856,41 +1566,31 @@ function placeOrder(event) {
     });
 
 
-    orderMessage +=
-        "%0A💰 *TOTAL: Rs. " +
+    message +=
+        "%0A*Total: Rs. " +
         total.toLocaleString() +
         "*";
 
 
-    /*
-       IMPORTANT:
-       Replace 923001234567 with
-       your actual WhatsApp number.
-    */
-
-
-    const whatsappNumber =
-        "923001234567";
-
-
-    const whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        orderMessage;
+    message +=
+        "%0A%0APlease confirm my order and delivery details.";
 
 
     window.open(
-        whatsappURL,
+        "https://wa.me/923001234567?text=" + message,
         "_blank"
     );
 
 }
 
 
-/* =========================
-   INITIALIZE
-========================= */
+/* ================= YEAR ================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* ================= INITIAL CART ================= */
 
 updateCart();
 
