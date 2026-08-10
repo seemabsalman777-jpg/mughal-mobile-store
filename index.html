@@ -1,11 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Mughal Mobile Trend Store</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#05070d;
+      color:white;
+    }
+
+    header{
+      background:#081426;
+      padding:18px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:25px;
+      font-weight:bold;
+      color:#4da6ff;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:25px;
+    }
+
+    .hero{
+      min-height:520px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px 20px;
+      background:linear-gradient(135deg,#02040a,#06172d,#000);
+    }
+
+    .hero h1{
+      font-size:52px;
+      margin-bottom:15px;
+    }
+
+    .hero span{
+      color:#4da6ff;
+    }
+
+    .hero p{
+      font-size:19px;
+      color:#cbd5e1;
+      margin-bottom:25px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:13px 28px;
+      background:#1687ff;
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:bold;
+    }
+
+    .categories{
+      padding:60px 8%;
+      text-align:center;
+    }
+
+    .categories h2{
+      font-size:34px;
+      margin-bottom:35px;
+    }
+
+    .category-box{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:#0b1324;
+      padding:35px 20px;
+      border-radius:12px;
+      border:1px solid #18263d;
+    }
+
+    .card h3{
+      color:#4da6ff;
+      margin-bottom:10px;
+    }
+
+    footer{
+      background:#081426;
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+      color:#aaa;
+    }
+
+    @media(max-width:700px){
+      nav{
+        display:none;
+      }
+
+      .hero h1{
+        font-size:36px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Mughal Mobile Trend Store</h1>
-  <p>Mobile, Laptop & Computer Accessories</p>
+
+<header>
+  <div class="logo">Mughal Mobile Trend Store</div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#">Products</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+
+<section class="hero">
+
+  <div>
+
+    <h1>
+      Upgrade Your <span>Tech Lifestyle</span>
+    </h1>
+
+    <p>
+      Mobile, Laptop, Computer & Audio Accessories — All in One Place.
+    </p>
+
+    <a class="btn" href="#categories">
+      Shop Now
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="categories" id="categories">
+
+  <h2>Shop By Category</h2>
+
+  <div class="category-box">
+
+    <div class="card">
+      <h3>📱 Mobile Accessories</h3>
+      <p>Chargers, cables, covers, power banks and more.</p>
+    </div>
+
+    <div class="card">
+      <h3>💻 Laptop & Computer</h3>
+      <p>Keyboards, mice, USB hubs and computer accessories.</p>
+    </div>
+
+    <div class="card">
+      <h3>🎧 Audio Accessories</h3>
+      <p>Earbuds, headphones, speakers and audio products.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+  © 2026 Mughal Mobile Trend Store | All Rights Reserved
+</footer>
+
 </body>
 </html>
