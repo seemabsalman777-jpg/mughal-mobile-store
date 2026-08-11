@@ -1,205 +1,1486 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mughal Mobile Trend Store</title>
+<title>Mughal Mobile Trend Store</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
+<style>
 
-    body{
-      background:#05070d;
-      color:white;
-    }
+/* =========================
+   BASIC SETTINGS
+========================= */
 
-    header{
-      background:#081426;
-      padding:18px 8%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-    .logo{
-  font-size:25px;
-  font-weight:bold;
-  color:#4da6ff;
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#02050a;
+    color:#ffffff;
+}
+
+:root{
+    --blue:#0787ff;
+    --lightblue:#42b5ff;
+    --darkblue:#071426;
+    --card:#091321;
+    --border:#173451;
+    --text:#b8c5d6;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    width:100%;
+    background:rgba(3,10,20,0.96);
+    border-bottom:1px solid #10243b;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 7%;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 .logo img{
-  width:130px;
-  height:130px;
-  object-fit:contain;
-  display:block;
+    width:105px;
+    height:105px;
+    object-fit:contain;
+    display:block;
 }
-    nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:30px;
-  font-size:15px;
-  font-weight:600;
-  text-transform:uppercase;
-  transition:0.3s;
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size:14px;
+    font-weight:700;
+    transition:0.3s;
 }
 
 nav a:hover{
-  color:#1687ff;
+    color:var(--lightblue);
 }
-   .hero{
-  min-height:520px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:40px 20px;
-  background:linear-gradient(135deg,#02040a,#06172d,#000);
+
+.cart-button{
+    background:var(--blue);
+    padding:11px 17px;
+    border-radius:7px;
 }
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:610px;
+    padding:70px 8%;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at 80% 50%,rgba(0,132,255,.25),transparent 32%),
+    linear-gradient(115deg,#010306 10%,#041323 55%,#02070e 100%);
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border:1px solid rgba(30,156,255,.15);
+    border-radius:50%;
+    right:-100px;
+    top:50px;
+    box-shadow:
+    0 0 70px rgba(0,145,255,.15),
+    inset 0 0 70px rgba(0,145,255,.08);
+}
+
+.hero-content{
+    max-width:720px;
+    position:relative;
+    z-index:2;
+}
+
+.hero-small{
+    color:var(--lightblue);
+    text-transform:uppercase;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:4px;
+    margin-bottom:16px;
+}
+
+.hero h1{
+    font-size:68px;
+    line-height:0.98;
+    text-transform:uppercase;
+    font-weight:900;
+    margin-bottom:24px;
+}
+
+.hero h1 span{
+    display:block;
+    color:var(--lightblue);
+    text-shadow:0 0 25px rgba(0,153,255,.35);
+}
+
+.hero p{
+    max-width:590px;
+    font-size:17px;
+    line-height:1.7;
+    color:#bac8d9;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+    border:1px solid var(--blue);
+}
+
+.btn-primary{
+    background:var(--blue);
+    color:white;
+}
+
+.btn-secondary{
+    background:transparent;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(0,132,255,.25);
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    padding:25px 7%;
+    background:#06101c;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    border-top:1px solid #10243b;
+    border-bottom:1px solid #10243b;
+}
+
+.feature{
+    text-align:center;
+    padding:15px;
+}
+
+.feature-icon{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.feature h4{
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.feature p{
+    color:#8090a3;
+    font-size:12px;
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+.section{
+    padding:80px 7%;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-heading span{
+    color:var(--lightblue);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+.section-heading h2{
+    font-size:38px;
+    margin-top:10px;
+}
+
+.section-heading p{
+    color:#8999aa;
+    margin-top:12px;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.category-card{
+    min-height:240px;
+    background:
+    linear-gradient(145deg,#0a1727,#050b13);
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:35px;
+    position:relative;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.category-card:hover{
+    transform:translateY(-7px);
+    border-color:var(--blue);
+    box-shadow:0 15px 40px rgba(0,115,255,.15);
+}
+
+.category-icon{
+    font-size:45px;
+    margin-bottom:25px;
+}
+
+.category-card h3{
+    font-size:23px;
+    margin-bottom:12px;
+}
+
+.category-card p{
+    color:#8999aa;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.category-card a{
+    color:var(--lightblue);
+    text-decoration:none;
+    font-weight:bold;
+}
+
+
+/* =========================
+   BRANDS
+========================= */
+
+.brands{
+    background:#050b13;
+}
+
+.brand-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:15px;
+}
+
+.brand{
+    background:#091321;
+    border:1px solid #162b43;
+    min-height:85px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    font-weight:bold;
+    color:#dce8f5;
+    transition:.3s;
+}
+
+.brand:hover{
+    border-color:var(--blue);
+    color:var(--lightblue);
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product-card{
+    background:#08111d;
+    border:1px solid #162b43;
+    border-radius:13px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    border-color:#187ed0;
+}
+
+.product-image{
+    height:200px;
+    background:
+    radial-gradient(circle,#102b47,#050b12);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:70px;
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-category{
+    color:#64819e;
+    font-size:11px;
+    text-transform:uppercase;
+    margin-bottom:7px;
+}
+
+.product-info h3{
+    font-size:17px;
+    min-height:42px;
+}
+
+.price{
+    color:var(--lightblue);
+    font-size:21px;
+    font-weight:bold;
+    margin:14px 0;
+}
+
+.add-cart{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:var(--blue);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.add-cart:hover{
+    background:#006fd6;
+}
+
+
+/* =========================
+   CART
+========================= */
+
+.cart-section{
+    background:#06101c;
+}
+
+.cart-container{
+    max-width:850px;
+    margin:auto;
+    background:#081321;
+    border:1px solid var(--border);
+    padding:30px;
+    border-radius:15px;
+}
+
+#cartItems{
+    margin-bottom:25px;
+}
+
+.empty-cart{
+    color:#8798aa;
+    text-align:center;
+    padding:25px;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid #17283b;
+}
+
+.cart-item-name{
+    flex:1;
+}
+
+.cart-item button{
+    background:#14283c;
+    border:none;
+    color:white;
+    padding:7px 10px;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+.cart-total{
+    display:flex;
+    justify-content:space-between;
+    font-size:22px;
+    font-weight:bold;
+    padding:20px 0;
+}
+
+.cart-total span:last-child{
+    color:var(--lightblue);
+}
+
+
+/* =========================
+   CHECKOUT
+========================= */
+
+.checkout-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.form-group{
+    margin-bottom:17px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:7px;
+    font-size:13px;
+    color:#b5c4d4;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    background:#050c15;
+    border:1px solid #1b344d;
+    padding:13px;
+    border-radius:7px;
+    color:white;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color:var(--blue);
+}
+
+.form-group textarea{
+    min-height:115px;
+    resize:vertical;
+}
+
+.payment-box{
+    background:#071321;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:25px;
+}
+
+.payment-box h3{
+    margin-bottom:15px;
+}
+
+.payment-option{
+    background:#0a1b2c;
+    padding:15px;
+    border-radius:8px;
+    margin:15px 0;
+    border:1px solid #173451;
+}
+
+.whatsapp-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:7px;
+    background:#20b85a;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    text-align:center;
+    background:
+    radial-gradient(circle at center,#0a2641,#030810 65%);
+}
+
+.contact h2{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.contact p{
+    color:#9aabbd;
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#02060b;
+    border-top:1px solid #13263a;
+    padding:35px 7%;
+    text-align:center;
+    color:#728398;
+    font-size:13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
+
+    nav{
+        gap:12px;
+    }
+
+    nav a{
+        font-size:11px;
+    }
 
     .hero h1{
-      font-size:52px;
-      margin-bottom:15px;
+        font-size:52px;
     }
 
-    .hero span{
-      color:#4da6ff;
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .hero p{
-      font-size:19px;
-      color:#cbd5e1;
-      margin-bottom:25px;
+    .brand-grid{
+        grid-template-columns:repeat(3,1fr);
     }
 
-    .btn{
-      display:inline-block;
-      padding:13px 28px;
-      background:#1687ff;
-      color:white;
-      text-decoration:none;
-      border-radius:8px;
-      font-weight:bold;
+}
+
+@media(max-width:700px){
+
+    header{
+        padding:8px 4%;
     }
 
-    .categories{
-      padding:60px 8%;
-      text-align:center;
+    .logo img{
+        width:80px;
+        height:80px;
     }
 
-    .categories h2{
-      font-size:34px;
-      margin-bottom:35px;
-    }
-
-    .category-box{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-    }
-
-    .card{
-      background:#0b1324;
-      padding:35px 20px;
-      border-radius:12px;
-      border:1px solid #18263d;
-    }
-
-    .card h3{
-      color:#4da6ff;
-      margin-bottom:10px;
-    }
-
-    footer{
-      background:#081426;
-      text-align:center;
-      padding:25px;
-      margin-top:40px;
-      color:#aaa;
-    }
-
-    @media(max-width:700px){
-      nav{
+    nav a:not(.cart-button){
         display:none;
-      }
-
-      .hero h1{
-        font-size:36px;
-      }
     }
-  </style>
+
+    .hero{
+        min-height:520px;
+        padding:55px 6%;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .brand-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .checkout-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:60px 6%;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
+
+<!-- ================= HEADER ================= -->
+
 <header>
-<div class="logo">
-  <img src="chatgpt-image-jul-31-2026-03_25_36-pm.webp" alt="Mughal Mobile Logo">
-</div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#categories">Categories</a>
-    <a href="#">Products</a>
-    <a href="#">Contact</a>
-  </nav>
+
+    <a class="logo" href="#home">
+        <img
+        src="chatgpt-image-jul-31-2026-03_25_36-pm.webp"
+        alt="Mughal Mobile Logo">
+    </a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#brands">Brands</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+        <a href="#cart" class="cart-button">
+            🛒 Cart (<span id="cartCount">0</span>)
+        </a>
+    </nav>
+
 </header>
 
 
-<section class="hero">
+<!-- ================= HERO ================= -->
 
-  <div>
+<section class="hero" id="home">
 
-    <h1>
-      Upgrade Your <span>Tech Lifestyle</span>
-    </h1>
+    <div class="hero-content">
+
+        <div class="hero-small">
+            Mughal Mobile Trend Store
+        </div>
+
+        <h1>
+            Everything Your
+            <span>Mobile Needs.</span>
+        </h1>
+
+        <p>
+            Upgrade your tech lifestyle with quality mobile,
+            laptop, computer and audio accessories.
+            Smart accessories. Better performance. One trusted store.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#products" class="btn btn-primary">
+                Shop Now
+            </a>
+
+            <a href="#categories" class="btn btn-secondary">
+                Explore Categories
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div class="feature">
+        <div class="feature-icon">🚚</div>
+        <h4>Nationwide Delivery</h4>
+        <p>Delivery across Pakistan</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">✓</div>
+        <h4>Quality Products</h4>
+        <p>Carefully selected accessories</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">💵</div>
+        <h4>Cash on Delivery</h4>
+        <p>Easy COD ordering</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">💬</div>
+        <h4>WhatsApp Support</h4>
+        <p>Quick ordering assistance</p>
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="section" id="categories">
+
+    <div class="section-heading">
+        <span>Find What You Need</span>
+        <h2>Shop By Category</h2>
+        <p>Accessories for all your everyday technology.</p>
+    </div>
+
+    <div class="category-grid">
+
+        <div class="category-card">
+            <div class="category-icon">📱</div>
+            <h3>Mobile Accessories</h3>
+            <p>
+                Chargers, cables, covers, screen protectors,
+                power banks and more.
+            </p>
+            <a href="#products">Explore →</a>
+        </div>
+
+        <div class="category-card">
+            <div class="category-icon">💻</div>
+            <h3>Laptop & Computer</h3>
+            <p>
+                Keyboards, mice, USB hubs, laptop stands
+                and essential computer accessories.
+            </p>
+            <a href="#products">Explore →</a>
+        </div>
+
+        <div class="category-card">
+            <div class="category-icon">🎧</div>
+            <h3>Audio Accessories</h3>
+            <p>
+                Earbuds, headphones, speakers and
+                everyday audio accessories.
+            </p>
+            <a href="#products">Explore →</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BRANDS ================= -->
+
+<section class="section brands" id="brands">
+
+    <div class="section-heading">
+        <span>Top Names</span>
+        <h2>Shop Our Brands</h2>
+        <p>Find accessories for your favourite devices.</p>
+    </div>
+
+    <div class="brand-grid">
+
+        <div class="brand">Apple</div>
+        <div class="brand">Samsung</div>
+        <div class="brand">Xiaomi</div>
+        <div class="brand">OPPO</div>
+        <div class="brand">vivo</div>
+        <div class="brand">Infinix</div>
+
+        <div class="brand">HP</div>
+        <div class="brand">Dell</div>
+        <div class="brand">Lenovo</div>
+        <div class="brand">Logitech</div>
+        <div class="brand">Audionic</div>
+        <div class="brand">Ronin</div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="section" id="products">
+
+    <div class="section-heading">
+        <span>Trending Accessories</span>
+        <h2>Featured Products</h2>
+        <p>Products below are examples — we can replace them with your real stock.</p>
+    </div>
+
+
+    <div class="products-grid">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product-card">
+
+            <div class="product-image">🔌</div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Mobile Accessories
+                </div>
+
+                <h3>Fast Charging Adapter</h3>
+
+                <div class="price">
+                    Rs. 2,499
+                </div>
+
+                <button class="add-cart"
+                onclick="addToCart('Fast Charging Adapter',2499)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product-card">
+
+            <div class="product-image">🔋</div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Mobile Accessories
+                </div>
+
+                <h3>10000mAh Power Bank</h3>
+
+                <div class="price">
+                    Rs. 3,499
+                </div>
+
+                <button class="add-cart"
+                onclick="addToCart('10000mAh Power Bank',3499)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">🎧</div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Audio
+                </div>
+
+                <h3>Wireless Earbuds</h3>
+
+                <div class="price">
+                    Rs. 3,999
+                </div>
+
+                <button class="add-cart"
+                onclick="addToCart('Wireless Earbuds',3999)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product-card">
+
+            <div class="product-image">⌨️</div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Computer Accessories
+                </div>
+
+                <h3>Wireless Keyboard</h3>
+
+                <div class="price">
+                    Rs. 2,999
+                </div>
+
+                <button class="add-cart"
+                onclick="addToCart('Wireless Keyboard',2999)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product-card">
+
+            <div class="product-image">🖱️</div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Computer Accessories
+                </div>
+
+                <h3>Wireless Mouse</h3>
+
+                <div class="price">
+                    Rs. 1,499
+                </div>
+
+                <button class="add-cart"
+                onclick="addToCart('Wireless Mouse',1499)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product-card">
+
+            <div class="product-image">🔌</div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Laptop Accessories
+                </div>
+
+                <h3>USB Type-C Hub</h3>
+
+                <div class="price">
+                    Rs. 2,799
+                </div>
+
+                <button class="add-cart"
+                onclick="addToCart('USB Type-C Hub',2799)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 7 -->
+
+        <div class="product-card">
+
+            <div class="product-image">🎵</div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Audio
+                </div>
+
+                <h3>Bluetooth Speaker</h3>
+
+                <div class="price">
+                    Rs. 4,499
+                </div>
+
+                <button class="add-cart"
+                onclick="addToCart('Bluetooth Speaker',4499)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 8 -->
+
+        <div class="product-card">
+
+            <div class="product-image">📱</div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Mobile Accessories
+                </div>
+
+                <h3>Premium Phone Case</h3>
+
+                <div class="price">
+                    Rs. 999
+                </div>
+
+                <button class="add-cart"
+                onclick="addToCart('Premium Phone Case',999)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CART ================= -->
+
+<section class="section cart-section" id="cart">
+
+    <div class="section-heading">
+        <span>Your Order</span>
+        <h2>Shopping Cart</h2>
+    </div>
+
+    <div class="cart-container">
+
+        <div id="cartItems">
+
+            <div class="empty-cart">
+                Your cart is currently empty.
+            </div>
+
+        </div>
+
+        <div class="cart-total">
+            <span>Total</span>
+            <span id="cartTotal">Rs. 0</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CHECKOUT ================= -->
+
+<section class="section" id="checkout">
+
+    <div class="section-heading">
+        <span>Almost Done</span>
+        <h2>Checkout</h2>
+        <p>Enter your delivery details and place your order through WhatsApp.</p>
+    </div>
+
+
+    <div class="checkout-grid">
+
+
+        <div>
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input
+                type="tel"
+                id="customerPhone"
+                placeholder="03XX XXXXXXX">
+            </div>
+
+            <div class="form-group">
+                <label>City</label>
+                <input
+                type="text"
+                id="customerCity"
+                placeholder="Your city">
+            </div>
+
+            <div class="form-group">
+                <label>Complete Delivery Address</label>
+
+                <textarea
+                id="customerAddress"
+                placeholder="House / Street / Area / City"></textarea>
+
+            </div>
+
+        </div>
+
+
+        <div class="payment-box">
+
+            <h3>Payment Method</h3>
+
+            <div class="payment-option">
+                ✓ Cash on Delivery
+            </div>
+
+            <p style="color:#8fa1b4; line-height:1.6; margin-bottom:20px;">
+                After clicking the button below, WhatsApp will open
+                with your order details ready to send.
+            </p>
+
+            <button
+            class="whatsapp-btn"
+            onclick="placeOrder()">
+
+                💬 Place Order on WhatsApp
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section contact" id="contact">
+
+    <h2>Need Help Choosing?</h2>
 
     <p>
-      Mobile, Laptop, Computer & Audio Accessories — All in One Place.
+        Contact Mughal Mobile Trend Store for product information
+        and ordering assistance.
     </p>
 
-    <a class="btn" href="#categories">
-      Shop Now
+    <a href="#checkout" class="btn btn-primary">
+        Order Now
     </a>
 
-  </div>
-
 </section>
 
 
-<section class="categories" id="categories">
-
-  <h2>Shop By Category</h2>
-
-  <div class="category-box">
-
-    <div class="card">
-      <h3>📱 Mobile Accessories</h3>
-      <p>Chargers, cables, covers, power banks and more.</p>
-    </div>
-
-    <div class="card">
-      <h3>💻 Laptop & Computer</h3>
-      <p>Keyboards, mice, USB hubs and computer accessories.</p>
-    </div>
-
-    <div class="card">
-      <h3>🎧 Audio Accessories</h3>
-      <p>Earbuds, headphones, speakers and audio products.</p>
-    </div>
-
-  </div>
-
-</section>
-
+<!-- ================= FOOTER ================= -->
 
 <footer>
-  © 2026 Mughal Mobile Trend Store | All Rights Reserved
+
+    © 2026 Mughal Mobile Trend Store
+    <br><br>
+    Mobile • Laptop • Computer • Audio Accessories
+
 </footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+let cart = [];
+
+
+/* ADD PRODUCT */
+
+function addToCart(name,price){
+
+    let existing = cart.find(item => item.name === name);
+
+    if(existing){
+
+        existing.qty++;
+
+    }else{
+
+        cart.push({
+            name:name,
+            price:price,
+            qty:1
+        });
+
+    }
+
+    updateCart();
+
+}
+
+
+/* REMOVE PRODUCT */
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+/* INCREASE */
+
+function increaseQty(index){
+
+    cart[index].qty++;
+
+    updateCart();
+
+}
+
+
+/* DECREASE */
+
+function decreaseQty(index){
+
+    if(cart[index].qty > 1){
+
+        cart[index].qty--;
+
+    }else{
+
+        cart.splice(index,1);
+
+    }
+
+    updateCart();
+
+}
+
+
+/* UPDATE CART */
+
+function updateCart(){
+
+    let cartBox = document.getElementById("cartItems");
+
+    let count = 0;
+
+    let total = 0;
+
+
+    if(cart.length === 0){
+
+        cartBox.innerHTML =
+        '<div class="empty-cart">Your cart is currently empty.</div>';
+
+    }else{
+
+        cartBox.innerHTML = "";
+
+        cart.forEach((item,index)=>{
+
+            count += item.qty;
+
+            total += item.price * item.qty;
+
+
+            cartBox.innerHTML += `
+
+            <div class="cart-item">
+
+                <div class="cart-item-name">
+
+                    <strong>${item.name}</strong>
+
+                    <br>
+
+                    <small>
+                    Rs. ${item.price.toLocaleString()}
+                    </small>
+
+                </div>
+
+
+                <button onclick="decreaseQty(${index})">
+                    −
+                </button>
+
+                <span>
+                    ${item.qty}
+                </span>
+
+                <button onclick="increaseQty(${index})">
+                    +
+                </button>
+
+
+                <strong>
+                    Rs. ${(item.price * item.qty).toLocaleString()}
+                </strong>
+
+
+                <button onclick="removeItem(${index})">
+                    ✕
+                </button>
+
+            </div>
+
+            `;
+
+        });
+
+    }
+
+
+    document.getElementById("cartCount").innerText = count;
+
+    document.getElementById("cartTotal").innerText =
+    "Rs. " + total.toLocaleString();
+
+}
+
+
+/* PLACE ORDER */
+
+function placeOrder(){
+
+    if(cart.length === 0){
+
+        alert("Please add at least one product to your cart.");
+
+        return;
+
+    }
+
+
+    let name =
+    document.getElementById("customerName").value.trim();
+
+    let phone =
+    document.getElementById("customerPhone").value.trim();
+
+    let city =
+    document.getElementById("customerCity").value.trim();
+
+    let address =
+    document.getElementById("customerAddress").value.trim();
+
+
+    if(!name || !phone || !city || !address){
+
+        alert("Please complete all delivery details.");
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+    let orderDetails = "";
+
+
+    cart.forEach(item=>{
+
+        let itemTotal =
+        item.price * item.qty;
+
+        total += itemTotal;
+
+
+        orderDetails +=
+        `• ${item.name} x ${item.qty} - Rs. ${itemTotal.toLocaleString()}\n`;
+
+    });
+
+
+    let message =
+
+`NEW ORDER - MUGHAL MOBILE TREND STORE
+
+Customer: ${name}
+Phone: ${phone}
+City: ${city}
+
+Delivery Address:
+${address}
+
+ORDER:
+${orderDetails}
+
+TOTAL: Rs. ${total.toLocaleString()}
+
+Payment Method: Cash on Delivery`;
+
+
+/*
+IMPORTANT:
+
+Replace the number below with your own WhatsApp number.
+
+Pakistan format example:
+
+923001234567
+
+Do NOT use:
++92
+spaces
+dashes
+*/
+
+
+    let whatsappNumber =
+    "923001234567";
+
+
+    let url =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+    window.open(url,"_blank");
+
+}
+
+</script>
+
 
 </body>
 </html>
