@@ -7,9 +7,6 @@
 <title>Mughal Mobile Trend Store</title>
 
 <style>
-/* =========================
-   GLOBAL
-========================= */
 
 *{
   margin:0;
@@ -23,17 +20,17 @@ html{
 }
 
 :root{
-  --blue:#087df1;
-  --blue2:#29a9ff;
-  --navy:#07182e;
-  --navy2:#0d2b4e;
-  --text:#15263a;
-  --muted:#6d7d90;
-  --light:#f5f9fd;
-  --lightblue:#eaf5ff;
+  --blue:#0a7df0;
+  --blue2:#37b5ff;
+  --navy:#08192e;
+  --navy2:#102b49;
+  --text:#17283b;
+  --muted:#6f8092;
+  --soft:#f4f9fd;
+  --softblue:#eaf5ff;
   --border:#dce9f5;
   --white:#ffffff;
-  --green:#18a957;
+  --green:#20b85a;
 }
 
 body{
@@ -41,18 +38,15 @@ body{
   color:var(--text);
 }
 
-section{
-  scroll-margin-top:100px;
-}
-
 a{
   text-decoration:none;
 }
 
+section{
+  scroll-margin-top:100px;
+}
 
-/* =========================
-   TOP BAR
-========================= */
+/* TOPBAR */
 
 .topbar{
   background:var(--navy);
@@ -63,32 +57,28 @@ a{
 }
 
 .topbar strong{
-  color:#55bcff;
+  color:#59c0ff;
 }
 
-
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
-  width:100%;
-  min-height:88px;
-  background:rgba(255,255,255,.96);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  min-height:90px;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid #e4edf5;
+  box-shadow:0 5px 20px rgba(30,70,110,.05);
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:6px 7%;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  border-bottom:1px solid #e5eef7;
-  box-shadow:0 4px 18px rgba(24,68,110,.05);
 }
 
 .logo img{
-  width:92px;
-  height:92px;
+  width:95px;
+  height:95px;
   object-fit:contain;
   display:block;
 }
@@ -96,7 +86,7 @@ header{
 nav{
   display:flex;
   align-items:center;
-  gap:28px;
+  gap:26px;
 }
 
 nav a{
@@ -111,47 +101,43 @@ nav a:hover{
   color:var(--blue);
 }
 
-.cart-btn{
+.cart-link{
   background:var(--navy);
   color:white !important;
-  padding:12px 17px;
+  padding:12px 18px;
   border-radius:30px;
-  box-shadow:0 7px 20px rgba(7,24,46,.12);
 }
 
-.cart-btn:hover{
+.cart-link:hover{
   background:var(--blue);
 }
 
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
-  min-height:590px;
+  min-height:620px;
   display:grid;
-  grid-template-columns:1.1fr .9fr;
+  grid-template-columns:1.05fr .95fr;
   align-items:center;
   gap:50px;
-  padding:65px 8%;
-  overflow:hidden;
+  padding:70px 8%;
   position:relative;
+  overflow:hidden;
 
   background:
-    radial-gradient(circle at 82% 40%,rgba(41,169,255,.20),transparent 27%),
-    linear-gradient(120deg,#ffffff 0%,#f3f9ff 50%,#e8f5ff 100%);
+    radial-gradient(circle at 82% 35%,rgba(40,169,255,.20),transparent 28%),
+    linear-gradient(125deg,#ffffff 0%,#f3f9ff 52%,#e7f4ff 100%);
 }
 
-.hero::before{
+.hero::after{
   content:"";
-  position:absolute;
   width:420px;
   height:420px;
+  position:absolute;
+  right:-160px;
+  bottom:-160px;
   border-radius:50%;
-  background:rgba(40,168,255,.08);
-  right:-100px;
-  top:-120px;
+  background:rgba(10,125,240,.08);
 }
 
 .hero-content{
@@ -161,21 +147,22 @@ nav a:hover{
 
 .eyebrow{
   display:inline-block;
-  background:#e5f4ff;
   color:var(--blue);
-  padding:9px 15px;
+  background:#e9f5ff;
+  border:1px solid #cfeaff;
   border-radius:30px;
+  padding:9px 15px;
   font-size:12px;
   font-weight:800;
-  letter-spacing:1.7px;
+  letter-spacing:1.5px;
   text-transform:uppercase;
   margin-bottom:20px;
 }
 
 .hero h1{
-  font-size:64px;
-  line-height:1.02;
   color:var(--navy);
+  font-size:66px;
+  line-height:1.02;
   letter-spacing:-2px;
   margin-bottom:22px;
 }
@@ -200,8 +187,8 @@ nav a:hover{
 
 .btn{
   display:inline-flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   min-height:48px;
   padding:0 25px;
   border-radius:30px;
@@ -212,53 +199,50 @@ nav a:hover{
 .btn-primary{
   color:white;
   background:linear-gradient(135deg,var(--blue),var(--blue2));
-  box-shadow:0 12px 28px rgba(8,125,241,.22);
+  box-shadow:0 12px 28px rgba(10,125,240,.22);
 }
 
 .btn-outline{
   color:var(--navy);
-  border:1px solid #c7d9e9;
   background:white;
+  border:1px solid #cadcea;
 }
 
 .btn:hover{
   transform:translateY(-3px);
 }
 
-
 /* HERO VISUAL */
 
 .hero-visual{
-  min-height:410px;
   position:relative;
+  min-height:420px;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
 .hero-circle{
-  width:370px;
-  height:370px;
+  width:380px;
+  height:380px;
   border-radius:50%;
-  background:linear-gradient(145deg,#0b87f3,#06274a);
-  box-shadow:0 30px 70px rgba(8,125,241,.25);
+  background:linear-gradient(145deg,#0c86ef,#05294c);
+  box-shadow:0 30px 70px rgba(13,104,190,.25);
   display:flex;
-  justify-content:center;
   align-items:center;
-  position:relative;
+  justify-content:center;
 }
 
-.hero-phone{
-  width:165px;
-  height:310px;
+.phone-art{
+  width:170px;
+  height:315px;
+  background:linear-gradient(145deg,#f4fbff,#8ed0fb);
   border:10px solid #061426;
-  background:linear-gradient(145deg,#eaf7ff,#91d3ff);
-  border-radius:30px;
-  box-shadow:0 25px 45px rgba(0,0,0,.22);
+  border-radius:32px;
+  box-shadow:0 25px 50px rgba(0,0,0,.25);
   display:flex;
   align-items:center;
   justify-content:center;
-  color:var(--navy);
   font-size:65px;
   transform:rotate(8deg);
 }
@@ -266,21 +250,12 @@ nav a:hover{
 .float-card{
   position:absolute;
   background:white;
-  padding:14px 18px;
-  border-radius:15px;
-  box-shadow:0 15px 35px rgba(32,75,115,.16);
-  font-weight:700;
   color:var(--navy);
-}
-
-.float-one{
-  top:35px;
-  left:0;
-}
-
-.float-two{
-  bottom:35px;
-  right:0;
+  border:1px solid #e0ecf5;
+  box-shadow:0 14px 35px rgba(30,75,110,.15);
+  padding:14px 17px;
+  border-radius:15px;
+  font-weight:700;
 }
 
 .float-card small{
@@ -290,37 +265,43 @@ nav a:hover{
   margin-top:4px;
 }
 
+.float-one{
+  top:45px;
+  left:0;
+}
 
-/* =========================
-   TRUST STRIP
-========================= */
+.float-two{
+  right:0;
+  bottom:45px;
+}
+
+/* TRUST */
 
 .trust{
   background:white;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
   padding:25px 7%;
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:15px;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
 }
 
 .trust-item{
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   gap:12px;
-  padding:10px;
 }
 
 .trust-icon{
-  width:44px;
-  height:44px;
+  width:45px;
+  height:45px;
   border-radius:50%;
-  background:var(--lightblue);
   display:flex;
   align-items:center;
   justify-content:center;
+  background:var(--softblue);
   font-size:20px;
 }
 
@@ -335,36 +316,33 @@ nav a:hover{
   margin-top:3px;
 }
 
-
-/* =========================
-   SECTIONS
-========================= */
+/* GENERAL */
 
 .section{
   padding:85px 7%;
 }
 
-.soft-section{
+.soft{
   background:#f0f7fd;
 }
 
 .section-heading{
+  text-align:center;
   max-width:700px;
   margin:0 auto 45px;
-  text-align:center;
 }
 
 .section-heading span{
   color:var(--blue);
+  text-transform:uppercase;
   font-size:12px;
   font-weight:800;
   letter-spacing:2px;
-  text-transform:uppercase;
 }
 
 .section-heading h2{
   color:var(--navy);
-  font-size:39px;
+  font-size:40px;
   margin:9px 0 12px;
 }
 
@@ -373,15 +351,12 @@ nav a:hover{
   line-height:1.6;
 }
 
-
-/* =========================
-   CATEGORIES
-========================= */
+/* CATEGORIES */
 
 .category-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:23px;
+  gap:24px;
 }
 
 .category-card{
@@ -389,40 +364,29 @@ nav a:hover{
   border:1px solid #e2edf6;
   border-radius:22px;
   padding:35px;
-  min-height:270px;
+  min-height:275px;
+  box-shadow:0 12px 35px rgba(35,75,110,.07);
+  transition:.3s;
   position:relative;
   overflow:hidden;
-  box-shadow:0 12px 35px rgba(34,74,110,.07);
-  transition:.3s;
-}
-
-.category-card::after{
-  content:"";
-  position:absolute;
-  width:130px;
-  height:130px;
-  background:#edf7ff;
-  border-radius:50%;
-  right:-45px;
-  bottom:-45px;
 }
 
 .category-card:hover{
   transform:translateY(-8px);
-  box-shadow:0 20px 45px rgba(28,87,139,.13);
-  border-color:#b6dcfa;
+  box-shadow:0 20px 45px rgba(35,75,110,.13);
+  border-color:#b4dafa;
 }
 
 .category-icon{
-  width:65px;
-  height:65px;
+  width:66px;
+  height:66px;
+  border-radius:18px;
+  background:linear-gradient(145deg,#e5f4ff,#f8fcff);
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:18px;
-  background:linear-gradient(145deg,#e5f4ff,#f7fbff);
   font-size:31px;
-  margin-bottom:24px;
+  margin-bottom:23px;
 }
 
 .category-card h3{
@@ -442,42 +406,26 @@ nav a:hover{
   font-weight:700;
 }
 
+/* BRANDS IMAGE */
 
-/* =========================
-   BRANDS
-========================= */
-
-.brand-grid{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:15px;
-}
-
-.brand{
+.brands-image-wrap{
+  max-width:1500px;
+  margin:auto;
   background:white;
+  padding:14px;
+  border-radius:24px;
   border:1px solid #dce9f5;
-  min-height:95px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  border-radius:16px;
-  color:var(--navy);
-  font-weight:800;
-  box-shadow:0 8px 25px rgba(32,74,110,.05);
-  transition:.25s;
+  box-shadow:0 18px 45px rgba(35,75,110,.09);
 }
 
-.brand:hover{
-  color:var(--blue);
-  transform:translateY(-5px);
-  border-color:#9dd2fa;
-  box-shadow:0 15px 30px rgba(18,109,187,.11);
+.brands-image{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:18px;
 }
 
-
-/* =========================
-   PRODUCTS
-========================= */
+/* PRODUCTS */
 
 .products-grid{
   display:grid;
@@ -487,7 +435,7 @@ nav a:hover{
 
 .product-card{
   background:white;
-  border:1px solid #e1ebf4;
+  border:1px solid #e2ebf3;
   border-radius:20px;
   overflow:hidden;
   position:relative;
@@ -504,22 +452,22 @@ nav a:hover{
   position:absolute;
   top:14px;
   left:14px;
+  z-index:3;
   background:var(--blue);
   color:white;
+  border-radius:20px;
+  padding:7px 10px;
   font-size:10px;
   font-weight:800;
-  padding:7px 10px;
-  border-radius:20px;
-  z-index:3;
 }
 
 .product-image{
   height:220px;
+  background:linear-gradient(145deg,#f9fcff,#eaf5fd);
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:72px;
-  background:linear-gradient(145deg,#f8fcff,#eaf5fd);
   border-bottom:1px solid #e4eef6;
 }
 
@@ -543,18 +491,18 @@ nav a:hover{
 }
 
 .rating{
-  color:#f5a623;
+  color:#f3a623;
   font-size:12px;
   margin:8px 0;
 }
 
 .rating span{
-  color:#94a0ad;
+  color:#97a3af;
 }
 
 .price{
   color:var(--navy);
-  font-size:21px;
+  font-size:22px;
   font-weight:800;
   margin:13px 0;
 }
@@ -562,8 +510,8 @@ nav a:hover{
 .add-cart{
   width:100%;
   border:none;
-  padding:12px;
   border-radius:25px;
+  padding:12px;
   background:var(--navy);
   color:white;
   font-weight:700;
@@ -575,22 +523,19 @@ nav a:hover{
   background:var(--blue);
 }
 
-
-/* =========================
-   PROMO
-========================= */
+/* PROMO */
 
 .promo{
   margin:0 7% 85px;
   padding:55px;
   border-radius:25px;
-  background:linear-gradient(120deg,#06172b,#0b70c9);
-  color:white;
+  background:linear-gradient(120deg,#07182e,#0b72ce);
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  gap:30px;
-  box-shadow:0 25px 60px rgba(8,73,129,.20);
+  justify-content:space-between;
+  gap:25px;
+  color:white;
+  box-shadow:0 25px 60px rgba(7,70,125,.20);
 }
 
 .promo h2{
@@ -609,10 +554,7 @@ nav a:hover{
   white-space:nowrap;
 }
 
-
-/* =========================
-   CART
-========================= */
+/* CART */
 
 .cart-section{
   background:#f0f7fd;
@@ -654,27 +596,27 @@ nav a:hover{
 .qty-btn{
   width:31px;
   height:31px;
+  border-radius:50%;
   border:1px solid #d3e2ef;
   background:#f4f9fd;
   color:var(--navy);
-  border-radius:50%;
   cursor:pointer;
 }
 
 .remove-btn{
-  border:none;
-  background:#fff0f0;
-  color:#d64545;
-  border-radius:50%;
   width:31px;
   height:31px;
+  border:none;
+  border-radius:50%;
+  background:#fff0f0;
+  color:#d64545;
   cursor:pointer;
 }
 
 .cart-total{
+  padding-top:25px;
   display:flex;
   justify-content:space-between;
-  padding-top:25px;
   color:var(--navy);
   font-size:23px;
   font-weight:800;
@@ -684,10 +626,7 @@ nav a:hover{
   color:var(--blue);
 }
 
-
-/* =========================
-   CHECKOUT
-========================= */
+/* CHECKOUT */
 
 .checkout-grid{
   max-width:1000px;
@@ -724,8 +663,8 @@ nav a:hover{
 
 .form-group label{
   display:block;
-  color:#4c5f73;
   font-size:12px;
+  color:#4c5f73;
   font-weight:700;
   margin-bottom:7px;
 }
@@ -734,11 +673,11 @@ nav a:hover{
 .form-group textarea{
   width:100%;
   padding:13px 14px;
-  border:1px solid #d5e3ee;
   background:#f9fcff;
+  border:1px solid #d5e3ee;
   border-radius:10px;
-  outline:none;
   color:var(--navy);
+  outline:none;
 }
 
 .form-group input:focus,
@@ -771,10 +710,10 @@ nav a:hover{
 .whatsapp{
   width:100%;
   border:none;
-  padding:15px;
   border-radius:30px;
-  color:white;
   background:var(--green);
+  color:white;
+  padding:15px;
   font-size:15px;
   font-weight:800;
   cursor:pointer;
@@ -786,10 +725,7 @@ nav a:hover{
   box-shadow:0 12px 25px rgba(24,169,87,.20);
 }
 
-
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 
 .contact{
   background:white;
@@ -807,7 +743,7 @@ nav a:hover{
 
 .contact h2{
   color:var(--navy);
-  font-size:37px;
+  font-size:38px;
   margin-bottom:12px;
 }
 
@@ -817,10 +753,7 @@ nav a:hover{
   margin-bottom:25px;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
   background:var(--navy);
@@ -838,10 +771,7 @@ footer p{
   font-size:13px;
 }
 
-
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:1000px){
 
@@ -864,12 +794,7 @@ footer p{
   .products-grid{
     grid-template-columns:repeat(2,1fr);
   }
-
-  .brand-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
 }
-
 
 @media(max-width:760px){
 
@@ -882,7 +807,7 @@ footer p{
     height:75px;
   }
 
-  nav a:not(.cart-btn){
+  nav a:not(.cart-link){
     display:none;
   }
 
@@ -890,10 +815,6 @@ footer p{
     grid-template-columns:1fr;
     padding:55px 6%;
     text-align:center;
-  }
-
-  .hero-content{
-    margin:auto;
   }
 
   .hero h1{
@@ -918,9 +839,9 @@ footer p{
     height:310px;
   }
 
-  .hero-phone{
-    height:260px;
+  .phone-art{
     width:140px;
+    height:260px;
   }
 
   .trust{
@@ -935,14 +856,7 @@ footer p{
     grid-template-columns:1fr;
   }
 
-  .brand-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .checkout-grid{
-    grid-template-columns:1fr;
-  }
-
+  .checkout-grid,
   .form-row{
     grid-template-columns:1fr;
   }
@@ -955,10 +869,6 @@ footer p{
     text-align:center;
   }
 
-  .promo h2{
-    font-size:29px;
-  }
-
   .section{
     padding:65px 6%;
   }
@@ -969,22 +879,17 @@ footer p{
 
 <body>
 
-
-<!-- TOP BAR -->
-
 <div class="topbar">
   🚚 Nationwide Delivery Across Pakistan &nbsp; • &nbsp;
   <strong>Cash on Delivery Available</strong>
 </div>
 
-
-<!-- HEADER -->
-
 <header>
 
   <a href="#home" class="logo">
     <img
-src="Shop our brand.png"      alt="Mughal Mobile Logo">
+      src="chatgpt-image-jul-31-2026-03_25_36-pm.webp"
+      alt="Mughal Mobile Logo">
   </a>
 
   <nav>
@@ -994,22 +899,19 @@ src="Shop our brand.png"      alt="Mughal Mobile Logo">
     <a href="#products">Products</a>
     <a href="#contact">Contact</a>
 
-    <a href="#cart" class="cart-btn">
+    <a href="#cart" class="cart-link">
       🛒 Cart (<span id="cartCount">0</span>)
     </a>
   </nav>
 
 </header>
 
-
-<!-- HERO -->
-
 <section class="hero" id="home">
 
   <div class="hero-content">
 
     <div class="eyebrow">
-      ⚡ Upgrade Your Tech Lifestyle
+      ⚡ Mughal Mobile Trend Store
     </div>
 
     <h1>
@@ -1018,9 +920,9 @@ src="Shop our brand.png"      alt="Mughal Mobile Logo">
     </h1>
 
     <p>
-      Discover mobile, laptop, computer and audio accessories
+      Discover quality mobile, laptop, computer and audio accessories
       designed to make your everyday technology smarter,
-      easier and better.
+      easier and more convenient.
     </p>
 
     <div class="hero-buttons">
@@ -1030,40 +932,36 @@ src="Shop our brand.png"      alt="Mughal Mobile Logo">
       </a>
 
       <a href="#categories" class="btn btn-outline">
-        Explore Categories
+        Browse Categories
       </a>
 
     </div>
 
   </div>
 
-
   <div class="hero-visual">
 
     <div class="hero-circle">
 
-      <div class="hero-phone">
+      <div class="phone-art">
         📱
       </div>
 
     </div>
 
     <div class="float-card float-one">
-      🎧 Audio
-      <small>Premium Accessories</small>
+      🎧 Audio Accessories
+      <small>Better sound, everyday.</small>
     </div>
 
     <div class="float-card float-two">
       ⚡ Fast Charging
-      <small>Power Your Devices</small>
+      <small>Power your devices.</small>
     </div>
 
   </div>
 
 </section>
-
-
-<!-- TRUST -->
 
 <section class="trust">
 
@@ -1078,7 +976,7 @@ src="Shop our brand.png"      alt="Mughal Mobile Logo">
   <div class="trust-item">
     <div class="trust-icon">✓</div>
     <div>
-      <h4>Quality Products</h4>
+      <h4>Quality Accessories</h4>
       <p>Carefully selected</p>
     </div>
   </div>
@@ -1095,14 +993,11 @@ src="Shop our brand.png"      alt="Mughal Mobile Logo">
     <div class="trust-icon">💬</div>
     <div>
       <h4>Quick Support</h4>
-      <p>Order via WhatsApp</p>
+      <p>WhatsApp ordering</p>
     </div>
   </div>
 
 </section>
-
-
-<!-- CATEGORIES -->
 
 <section class="section" id="categories">
 
@@ -1110,394 +1005,211 @@ src="Shop our brand.png"      alt="Mughal Mobile Logo">
     <span>Find What You Need</span>
     <h2>Shop By Category</h2>
     <p>
-      Everything you need for your mobile, laptop,
-      computer and audio setup.
+      Accessories for your mobile, laptop,
+      computer and everyday audio setup.
     </p>
   </div>
-
 
   <div class="category-grid">
 
     <div class="category-card">
-
       <div class="category-icon">📱</div>
-
       <h3>Mobile Accessories</h3>
-
       <p>
-        Chargers, cables, phone cases, screen protectors,
-        power banks and everyday mobile essentials.
+        Chargers, cables, cases, power banks,
+        screen protectors and mobile essentials.
       </p>
-
-      <a href="#products">
-        Shop Mobile →
-      </a>
-
+      <a href="#products">Shop Mobile →</a>
     </div>
 
-
     <div class="category-card">
-
       <div class="category-icon">💻</div>
-
       <h3>Laptop & Computer</h3>
-
       <p>
-        Keyboards, mice, USB hubs, laptop stands
-        and useful computer accessories.
+        Keyboards, mice, USB hubs,
+        stands and computer accessories.
       </p>
-
-      <a href="#products">
-        Shop Computer →
-      </a>
-
+      <a href="#products">Shop Computer →</a>
     </div>
 
-
     <div class="category-card">
-
       <div class="category-icon">🎧</div>
-
       <h3>Audio Accessories</h3>
-
       <p>
-        Earbuds, headphones, Bluetooth speakers
-        and accessories for better sound.
+        Earbuds, headphones,
+        speakers and sound accessories.
       </p>
-
-      <a href="#products">
-        Shop Audio →
-      </a>
-
+      <a href="#products">Shop Audio →</a>
     </div>
 
   </div>
 
 </section>
 
-
-<!-- BRANDS -->
-
-<section class="section soft-section" id="brands">
+<section class="section soft" id="brands">
 
   <div class="section-heading">
-
-    <span>Popular Names</span>
-
+    <span>Popular Tech Brands</span>
     <h2>Shop Our Brands</h2>
-
     <p>
-      Accessories for the brands and devices you love.
+      Browse accessories for trusted mobile,
+      laptop and audio brands.
     </p>
+  </div>
+
+  <div class="brands-image-wrap">
+
+    <img
+      src="Shop our brand.png"
+      alt="Shop Our Brands"
+      class="brands-image">
 
   </div>
 
-
-  <div class="brands-image-wrap">
-  <img
-    src="ChatGPT Image Aug 11, 2026, 12_20_11 PM.png"
-    alt="Shop Our Brands"
-    class="brands-image">
-</div>
-
 </section>
-
-
-<!-- PRODUCTS -->
 
 <section class="section" id="products">
 
   <div class="section-heading">
-
     <span>Customer Favourites</span>
-
     <h2>Featured Products</h2>
-
     <p>
-      Browse some of our popular tech accessories.
+      Example products are shown below.
+      Replace them with your real products and prices anytime.
     </p>
-
   </div>
-
 
   <div class="products-grid">
 
-
     <div class="product-card">
-
       <div class="badge">POPULAR</div>
-
       <div class="product-image">🔌</div>
-
       <div class="product-info">
-
-        <div class="product-category">
-          Mobile Accessories
-        </div>
-
+        <div class="product-category">Mobile Accessories</div>
         <h3>Fast Charging Adapter</h3>
-
-        <div class="rating">
-          ★★★★★ <span>(24)</span>
-        </div>
-
-        <div class="price">
-          Rs. 2,499
-        </div>
-
-        <button
-          class="add-cart"
-          onclick="addToCart('Fast Charging Adapter',2499)">
+        <div class="rating">★★★★★ <span>(24)</span></div>
+        <div class="price">Rs. 2,499</div>
+        <button class="add-cart"
+        onclick="addToCart('Fast Charging Adapter',2499)">
           Add to Cart
         </button>
-
       </div>
-
     </div>
 
-
     <div class="product-card">
-
       <div class="badge">NEW</div>
-
       <div class="product-image">🔋</div>
-
       <div class="product-info">
-
-        <div class="product-category">
-          Mobile Accessories
-        </div>
-
+        <div class="product-category">Mobile Accessories</div>
         <h3>10000mAh Power Bank</h3>
-
-        <div class="rating">
-          ★★★★★ <span>(18)</span>
-        </div>
-
-        <div class="price">
-          Rs. 3,499
-        </div>
-
-        <button
-          class="add-cart"
-          onclick="addToCart('10000mAh Power Bank',3499)">
+        <div class="rating">★★★★★ <span>(18)</span></div>
+        <div class="price">Rs. 3,499</div>
+        <button class="add-cart"
+        onclick="addToCart('10000mAh Power Bank',3499)">
           Add to Cart
         </button>
-
       </div>
-
     </div>
 
-
     <div class="product-card">
-
       <div class="badge">TRENDING</div>
-
       <div class="product-image">🎧</div>
-
       <div class="product-info">
-
-        <div class="product-category">
-          Audio
-        </div>
-
+        <div class="product-category">Audio</div>
         <h3>Wireless Earbuds</h3>
-
-        <div class="rating">
-          ★★★★★ <span>(31)</span>
-        </div>
-
-        <div class="price">
-          Rs. 3,999
-        </div>
-
-        <button
-          class="add-cart"
-          onclick="addToCart('Wireless Earbuds',3999)">
+        <div class="rating">★★★★★ <span>(31)</span></div>
+        <div class="price">Rs. 3,999</div>
+        <button class="add-cart"
+        onclick="addToCart('Wireless Earbuds',3999)">
           Add to Cart
         </button>
-
       </div>
-
     </div>
 
-
     <div class="product-card">
-
       <div class="badge">BEST SELLER</div>
-
       <div class="product-image">⌨️</div>
-
       <div class="product-info">
-
-        <div class="product-category">
-          Computer Accessories
-        </div>
-
+        <div class="product-category">Computer Accessories</div>
         <h3>Wireless Keyboard</h3>
-
-        <div class="rating">
-          ★★★★★ <span>(15)</span>
-        </div>
-
-        <div class="price">
-          Rs. 2,999
-        </div>
-
-        <button
-          class="add-cart"
-          onclick="addToCart('Wireless Keyboard',2999)">
+        <div class="rating">★★★★★ <span>(15)</span></div>
+        <div class="price">Rs. 2,999</div>
+        <button class="add-cart"
+        onclick="addToCart('Wireless Keyboard',2999)">
           Add to Cart
         </button>
-
       </div>
-
     </div>
 
-
     <div class="product-card">
-
       <div class="product-image">🖱️</div>
-
       <div class="product-info">
-
-        <div class="product-category">
-          Computer Accessories
-        </div>
-
+        <div class="product-category">Computer Accessories</div>
         <h3>Wireless Mouse</h3>
-
-        <div class="rating">
-          ★★★★★ <span>(12)</span>
-        </div>
-
-        <div class="price">
-          Rs. 1,499
-        </div>
-
-        <button
-          class="add-cart"
-          onclick="addToCart('Wireless Mouse',1499)">
+        <div class="rating">★★★★★ <span>(12)</span></div>
+        <div class="price">Rs. 1,499</div>
+        <button class="add-cart"
+        onclick="addToCart('Wireless Mouse',1499)">
           Add to Cart
         </button>
-
       </div>
-
     </div>
 
-
     <div class="product-card">
-
       <div class="product-image">🔗</div>
-
       <div class="product-info">
-
-        <div class="product-category">
-          Laptop Accessories
-        </div>
-
+        <div class="product-category">Laptop Accessories</div>
         <h3>USB Type-C Hub</h3>
-
-        <div class="rating">
-          ★★★★★ <span>(20)</span>
-        </div>
-
-        <div class="price">
-          Rs. 2,799
-        </div>
-
-        <button
-          class="add-cart"
-          onclick="addToCart('USB Type-C Hub',2799)">
+        <div class="rating">★★★★★ <span>(20)</span></div>
+        <div class="price">Rs. 2,799</div>
+        <button class="add-cart"
+        onclick="addToCart('USB Type-C Hub',2799)">
           Add to Cart
         </button>
-
       </div>
-
     </div>
 
-
     <div class="product-card">
-
       <div class="badge">NEW</div>
-
       <div class="product-image">🔊</div>
-
       <div class="product-info">
-
-        <div class="product-category">
-          Audio
-        </div>
-
+        <div class="product-category">Audio</div>
         <h3>Bluetooth Speaker</h3>
-
-        <div class="rating">
-          ★★★★★ <span>(28)</span>
-        </div>
-
-        <div class="price">
-          Rs. 4,499
-        </div>
-
-        <button
-          class="add-cart"
-          onclick="addToCart('Bluetooth Speaker',4499)">
+        <div class="rating">★★★★★ <span>(28)</span></div>
+        <div class="price">Rs. 4,499</div>
+        <button class="add-cart"
+        onclick="addToCart('Bluetooth Speaker',4499)">
           Add to Cart
         </button>
-
       </div>
-
     </div>
 
-
     <div class="product-card">
-
       <div class="product-image">📱</div>
-
       <div class="product-info">
-
-        <div class="product-category">
-          Mobile Accessories
-        </div>
-
+        <div class="product-category">Mobile Accessories</div>
         <h3>Premium Phone Case</h3>
-
-        <div class="rating">
-          ★★★★★ <span>(35)</span>
-        </div>
-
-        <div class="price">
-          Rs. 999
-        </div>
-
-        <button
-          class="add-cart"
-          onclick="addToCart('Premium Phone Case',999)">
+        <div class="rating">★★★★★ <span>(35)</span></div>
+        <div class="price">Rs. 999</div>
+        <button class="add-cart"
+        onclick="addToCart('Premium Phone Case',999)">
           Add to Cart
         </button>
-
       </div>
-
     </div>
 
   </div>
 
 </section>
 
-
-<!-- PROMO -->
-
 <section class="promo">
 
   <div>
-
     <h2>Upgrade Your Setup.</h2>
-
     <p>
       Mobile, computer and audio accessories —
       all in one convenient place.
     </p>
-
   </div>
 
   <a href="#products" class="btn">
@@ -1506,23 +1218,15 @@ src="Shop our brand.png"      alt="Mughal Mobile Logo">
 
 </section>
 
-
-<!-- CART -->
-
 <section class="section cart-section" id="cart">
 
   <div class="section-heading">
-
     <span>Your Shopping Bag</span>
-
     <h2>Your Cart</h2>
-
     <p>
-      Review your products before placing your order.
+      Review your selected items before checkout.
     </p>
-
   </div>
-
 
   <div class="cart-box">
 
@@ -1536,99 +1240,67 @@ src="Shop our brand.png"      alt="Mughal Mobile Logo">
 
     </div>
 
-
     <div class="cart-total">
-
       <span>Total</span>
-
-      <span id="cartTotal">
-        Rs. 0
-      </span>
-
+      <span id="cartTotal">Rs. 0</span>
     </div>
 
   </div>
 
 </section>
 
-
-<!-- CHECKOUT -->
-
 <section class="section" id="checkout">
 
   <div class="section-heading">
-
     <span>Secure Your Order</span>
-
     <h2>Checkout</h2>
-
     <p>
-      Enter your delivery information below.
+      Complete your delivery details below.
     </p>
-
   </div>
 
-
   <div class="checkout-grid">
-
 
     <div class="checkout-form">
 
       <h3>Delivery Information</h3>
 
-
       <div class="form-row">
 
         <div class="form-group">
-
           <label>FULL NAME</label>
-
           <input
-            id="customerName"
-            type="text"
-            placeholder="Your full name">
-
+          id="customerName"
+          type="text"
+          placeholder="Your full name">
         </div>
-
 
         <div class="form-group">
-
           <label>PHONE NUMBER</label>
-
           <input
-            id="customerPhone"
-            type="tel"
-            placeholder="03XX XXXXXXX">
-
+          id="customerPhone"
+          type="tel"
+          placeholder="03XX XXXXXXX">
         </div>
 
       </div>
 
-
       <div class="form-group">
-
         <label>CITY</label>
-
         <input
-          id="customerCity"
-          type="text"
-          placeholder="Enter your city">
-
+        id="customerCity"
+        type="text"
+        placeholder="Enter your city">
       </div>
 
-
       <div class="form-group">
-
         <label>COMPLETE DELIVERY ADDRESS</label>
-
         <textarea
-          id="customerAddress"
-          placeholder="House / Street / Area / City"></textarea>
-
+        id="customerAddress"
+        placeholder="House / Street / Area / City"></textarea>
       </div>
 
     </div>
-
 
     <div class="order-box">
 
@@ -1639,17 +1311,14 @@ src="Shop our brand.png"      alt="Mughal Mobile Logo">
       </div>
 
       <p>
-        Add your products to the cart, complete your
-        delivery information and click below.
-        Your complete order will be prepared in WhatsApp.
+        Add products to your cart, enter your delivery
+        information and place the order via WhatsApp.
       </p>
 
       <button
-        class="whatsapp"
-        onclick="placeOrder()">
-
+      class="whatsapp"
+      onclick="placeOrder()">
         💬 Place Order on WhatsApp
-
       </button>
 
     </div>
@@ -1658,22 +1327,19 @@ src="Shop our brand.png"      alt="Mughal Mobile Logo">
 
 </section>
 
-
-<!-- CONTACT -->
-
 <section class="section contact" id="contact">
 
   <div class="contact-box">
 
-    <span class="eyebrow">
+    <div class="eyebrow">
       We're Here To Help
-    </span>
+    </div>
 
     <h2>Need Help Choosing?</h2>
 
     <p>
-      Need information about compatibility or a product?
-      Mughal Mobile Trend Store is here to help.
+      Contact Mughal Mobile Trend Store for product,
+      compatibility and ordering assistance.
     </p>
 
     <a href="#checkout" class="btn btn-primary">
@@ -1683,9 +1349,6 @@ src="Shop our brand.png"      alt="Mughal Mobile Logo">
   </div>
 
 </section>
-
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -1701,15 +1364,9 @@ src="Shop our brand.png"      alt="Mughal Mobile Logo">
 
 </footer>
 
-
 <script>
 
-/* =========================
-   SHOPPING CART
-========================= */
-
 let cart = [];
-
 
 function addToCart(name,price){
 
@@ -1717,58 +1374,38 @@ function addToCart(name,price){
   cart.find(item => item.name === name);
 
   if(existing){
-
     existing.qty++;
-
   }else{
-
     cart.push({
       name:name,
       price:price,
       qty:1
     });
-
   }
 
   updateCart();
-
 }
-
 
 function increaseQty(index){
-
   cart[index].qty++;
-
   updateCart();
-
 }
-
 
 function decreaseQty(index){
 
   if(cart[index].qty > 1){
-
     cart[index].qty--;
-
   }else{
-
     cart.splice(index,1);
-
   }
 
   updateCart();
-
 }
-
 
 function removeItem(index){
-
   cart.splice(index,1);
-
   updateCart();
-
 }
-
 
 function updateCart(){
 
@@ -1778,27 +1415,19 @@ function updateCart(){
   let count = 0;
   let total = 0;
 
-
   if(cart.length === 0){
 
     cartItems.innerHTML = `
-
       <div class="empty-cart">
-
         🛒
-
         <br><br>
-
         Your cart is currently empty.
-
       </div>
-
     `;
 
   }else{
 
     cartItems.innerHTML = "";
-
 
     cart.forEach((item,index)=>{
 
@@ -1809,89 +1438,62 @@ function updateCart(){
 
       total += itemTotal;
 
-
       cartItems.innerHTML += `
-
         <div class="cart-item">
 
           <div class="cart-name">
-
-            <strong>
-              ${item.name}
-            </strong>
-
+            <strong>${item.name}</strong>
             <br>
-
             <small>
               Rs. ${item.price.toLocaleString()}
             </small>
-
           </div>
 
-
           <button
-            class="qty-btn"
-            onclick="decreaseQty(${index})">
+          class="qty-btn"
+          onclick="decreaseQty(${index})">
             −
           </button>
 
-
-          <strong>
-            ${item.qty}
-          </strong>
-
+          <strong>${item.qty}</strong>
 
           <button
-            class="qty-btn"
-            onclick="increaseQty(${index})">
+          class="qty-btn"
+          onclick="increaseQty(${index})">
             +
           </button>
-
 
           <strong>
             Rs. ${itemTotal.toLocaleString()}
           </strong>
 
-
           <button
-            class="remove-btn"
-            onclick="removeItem(${index})">
+          class="remove-btn"
+          onclick="removeItem(${index})">
             ×
           </button>
 
         </div>
-
       `;
 
     });
 
   }
 
-
   document.getElementById("cartCount").innerText =
   count;
-
 
   document.getElementById("cartTotal").innerText =
   "Rs. " + total.toLocaleString();
 
 }
 
-
-/* =========================
-   WHATSAPP ORDER
-========================= */
-
 function placeOrder(){
 
   if(cart.length === 0){
-
     alert("Please add at least one product to your cart.");
-
     return;
-
   }
-
 
   let name =
   document.getElementById("customerName").value.trim();
@@ -1905,20 +1507,13 @@ function placeOrder(){
   let address =
   document.getElementById("customerAddress").value.trim();
 
-
   if(!name || !phone || !city || !address){
-
     alert("Please complete all delivery information.");
-
     return;
-
   }
 
-
   let total = 0;
-
   let orderDetails = "";
-
 
   cart.forEach(item=>{
 
@@ -1927,12 +1522,10 @@ function placeOrder(){
 
     total += itemTotal;
 
-
     orderDetails +=
     `• ${item.name} x ${item.qty} - Rs. ${itemTotal.toLocaleString()}\n`;
 
   });
-
 
   let message =
 
@@ -1953,29 +1546,17 @@ TOTAL: Rs. ${total.toLocaleString()}
 
 Payment Method: Cash on Delivery`;
 
+  /*
+  CHANGE THIS NUMBER TO YOUR BUSINESS WHATSAPP.
 
-/*
-=========================================
-CHANGE THIS TO YOUR BUSINESS WHATSAPP
-=========================================
-
-Example Pakistani number:
-
-0300 1234567
-
-becomes:
-
-923001234567
-
-No + sign
-No spaces
-No dashes
-*/
-
+  Example:
+  0300 1234567
+  becomes
+  923214564144
+  */
 
   let whatsappNumber =
   "923001234567";
-
 
   let whatsappURL =
   "https://wa.me/" +
@@ -1983,11 +1564,7 @@ No dashes
   "?text=" +
   encodeURIComponent(message);
 
-
-  window.open(
-    whatsappURL,
-    "_blank"
-  );
+  window.open(whatsappURL,"_blank");
 
 }
 
